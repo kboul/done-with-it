@@ -11,7 +11,7 @@ function WelcomeScreen() {
                     source={require('../assets/logo-red.png')}
                     style={styles.logo}
                 />
-                <Text>Sell what you don't need</Text>
+                <Text>Sell what you don&apos;t need</Text>
             </View>
             <View style={styles.loginButton}></View>
             <View style={styles.registerButton}></View>
