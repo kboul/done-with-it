@@ -1,6 +1,8 @@
 import React from 'react';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 
-export default function App() {
+const App = () => {
     return <ViewImageScreen />;
-}
+};
+
+export default App;

@@ -1,13 +1,15 @@
 {
     "env": {
         "browser": true,
-        "es6": true,
-        "react-native/react-native": true
+        "es6": true
     },
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/eslint-recommended"
+        "plugin:@typescript-eslint/eslint-recommended",
+        "airbnb",
+        "prettier",
+        "plugin:import/typescript"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -21,6 +23,25 @@
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
-    "plugins": ["react", "@typescript-eslint", "react-native"],
-    "rules": {}
+    "plugins": ["react", "@typescript-eslint", "prettier"],
+    "rules": {
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "react/jsx-closing-bracket-location": "off",
+        "react/jsx-indent": "off",
+        "react/jsx-indent-props": "off",
+        "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+        "global-require": 0,
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never",
+                "mjs": "never"
+            }
+        ]
+    }
 }
