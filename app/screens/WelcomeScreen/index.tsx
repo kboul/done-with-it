@@ -8,11 +8,11 @@ const WelcomeScreen = () => {
     return (
         <ImageBackground
             style={styles.background}
-            source={require('../../assets/background.jpg')}
+            source={require('./assets/background.jpg')}
             blurRadius={2}>
             <View style={styles.logoContainer}>
                 <Image
-                    source={require('../../assets/logo-red.png')}
+                    source={require('./assets/logo-red.png')}
                     style={styles.logo}
                 />
                 <Text style={styles.text}>Sell what you don&apos;t need</Text>

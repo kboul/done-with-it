@@ -25,7 +25,7 @@ const ViewImageScreen = () => {
             <ImageBackground
                 style={styles.image}
                 resizeMode="contain"
-                source={require('../../assets/chair.jpg')}
+                source={require('./chair.jpg')}
             />
         </View>
     );
