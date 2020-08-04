@@ -1,3 +1,4 @@
 export default interface IAppText {
-    children: React.ReactElement;
+    children: React.ReactElement | string;
+    style?: Object;
 }
