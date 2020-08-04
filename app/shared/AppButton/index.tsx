@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import IAppButton from './model';
 import styles from './styles';
 
-const AppButton = ({ title, onPress }: IAppButton) => {
+const AppButton = ({ title, color, onPress }: IAppButton) => {
     return (
-        <TouchableOpacity style={styles.container} onPress={onPress}>
-            <View style={styles.button}>
-                <Text style={styles.buttonText}>{title}</Text>
-            </View>
+        <TouchableOpacity
+            style={[{ backgroundColor: color }, styles.button]}
+            onPress={onPress}>
+            <Text style={styles.buttonText}>{title}</Text>
         </TouchableOpacity>
     );
 };

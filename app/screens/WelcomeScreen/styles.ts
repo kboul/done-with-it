@@ -6,10 +6,9 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center'
     },
-    loginButton: {
-        width: '100%',
-        height: 70,
-        backgroundColor: '#fc5c65'
+    buttonsContainer: {
+        padding: 20,
+        width: '100%'
     },
     logo: {
         width: 100,
@@ -20,10 +19,11 @@ const styles = StyleSheet.create({
         top: 70,
         alignItems: 'center'
     },
-    registerButton: {
-        width: '100%',
-        height: 70,
-        backgroundColor: '#4ecdc4'
+    text: {
+        fontWeight: 'bold',
+        paddingTop: 10,
+        textTransform: 'capitalize',
+        fontSize: 16
     }
 });
 

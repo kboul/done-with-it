@@ -1,8 +1,8 @@
 import React from 'react';
-import AppButton from './app/shared/AppButton';
+import WelcomeScreen from './app/screens/WelcomeScreen';
 
 const App = () => {
-    return <AppButton title="login" onPress={() => console.log('press')} />;
+    return <WelcomeScreen />;
 };
 
 export default App;
