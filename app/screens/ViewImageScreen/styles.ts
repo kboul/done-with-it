@@ -7,20 +7,14 @@ const styles = StyleSheet.create({
         flex: 1
     },
     closeIcon: {
-        width: 50,
-        height: 50,
-        backgroundColor: colors.primary,
         position: 'absolute',
         top: 20,
-        left: 30
+        left: 20
     },
     deleteIcon: {
-        width: 50,
-        height: 50,
-        backgroundColor: colors.secondary,
         position: 'absolute',
         top: 20,
-        right: 30
+        right: 20
     },
     image: {
         width: '100%',
