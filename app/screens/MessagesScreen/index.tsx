@@ -2,6 +2,7 @@ import React from 'react';
 import { FlatList } from 'react-native';
 
 import Screen from '../../shared/Screen';
+import ListItemSeparator from '../../shared/ListItemSeparator';
 import ListItem from '../../shared/ListItem';
 import messages from './constants';
 
@@ -11,13 +12,14 @@ const MessagesScreen = () => {
             <FlatList
                 data={messages}
                 keyExtractor={message => message.id.toString()}
-                renderItem={({ item }) => (
+                renderItem={({ item: { title, description, image } }) => (
                     <ListItem
-                        title={item.title}
-                        subtitle={item.description}
-                        image={item.image}
+                        title={title}
+                        subtitle={description}
+                        image={image}
                     />
                 )}
+                ItemSeparatorComponent={ListItemSeparator}
             />
         </Screen>
     );
