@@ -3,4 +3,5 @@ export default interface IListItem {
     title: string;
     subtitle: string;
     onPress: () => void;
+    renderRightActions: () => void;
 }

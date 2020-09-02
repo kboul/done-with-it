@@ -5,6 +5,7 @@ interface Icolors {
     white: string;
     mediumGray: string;
     lightGray: string;
+    danger: string;
 }
 
 const colors: Icolors = {
@@ -13,7 +14,8 @@ const colors: Icolors = {
     black: '#000',
     white: '#fff',
     mediumGray: '#6e6969',
-    lightGray: '#f8f4f4'
+    lightGray: '#f8f4f4',
+    danger: '#ff5252'
 };
 
 export default colors;
