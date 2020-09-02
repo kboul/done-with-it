@@ -1,8 +1,8 @@
 import React from 'react';
-import MessagesScreen from './app/screens/MessagesScreen';
+import MyAccountScreen from './app/screens/MyAccountScreen';
 
 const App = () => {
-    return <MessagesScreen />;
+    return <MyAccountScreen />;
 };
 
 export default App;

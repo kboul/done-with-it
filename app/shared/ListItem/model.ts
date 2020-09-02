@@ -1,7 +1,10 @@
+import React from 'react';
+
 export default interface IListItem {
-    image: number;
     title: string;
-    subtitle: string;
-    onPress: () => void;
-    renderRightActions: () => void;
+    subtitle?: string;
+    image?: number;
+    ImageComponent?: React.ReactNode;
+    onPress?: () => void;
+    renderRightActions?: () => void;
 }

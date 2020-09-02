@@ -8,9 +8,10 @@ import styles from './styles';
 import colors from '../../config/colors';
 
 const ListItem = ({
-    image,
     title,
     subtitle,
+    image,
+    ImageComponent,
     onPress,
     renderRightActions
 }: IListItem) => {
@@ -20,10 +21,15 @@ const ListItem = ({
                 underlayColor={colors.lightGray}
                 onPress={onPress}>
                 <View style={styles.container}>
-                    <Image source={image} style={styles.image} />
-                    <View>
+                    {ImageComponent}
+                    {image && <Image source={image} style={styles.image} />}
+                    <View style={styles.detailsContainer}>
                         <AppText style={styles.title}>{title}</AppText>
-                        <AppText style={styles.subtitle}>{subtitle}</AppText>
+                        {subtitle && (
+                            <AppText style={styles.subtitle}>
+                                {subtitle}
+                            </AppText>
+                        )}
                     </View>
                 </View>
             </TouchableHighlight>
