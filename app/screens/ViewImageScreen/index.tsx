@@ -1,6 +1,7 @@
 import React from 'react';
 import { ImageBackground, View } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 import styles from './styles';
 
 const iconSize = 24;

@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Image } from 'react-native';
+
 import IListItem from './model';
 import styles from './styles';
-import AppText from '../AppText/AppText';
+import AppText from '../AppText';
 
 const ListItem = ({ image, title, subtitle }: IListItem) => {
     return (
