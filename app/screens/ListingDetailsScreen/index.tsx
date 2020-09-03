@@ -9,7 +9,7 @@ const ListingDetailsScreen = () => {
     return (
         <View>
             <Image
-                source={require('./assets/jacket.jpg')}
+                source={require('../../assets/jacket.jpg')}
                 style={styles.image}
             />
             <View style={styles.detailsContainer}>
@@ -17,7 +17,7 @@ const ListingDetailsScreen = () => {
                 <AppText style={styles.subtitle}>$100</AppText>
                 <View style={styles.listItemContainer}>
                     <ListItem
-                        image={require('./assets/mosh.jpg')}
+                        image={require('../../assets/mosh.jpg')}
                         title="Mosh Hamedani"
                         subtitle="5 Listings"
                     />

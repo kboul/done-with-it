@@ -1,6 +1,7 @@
 import colors from '../../config/colors';
+import MenuItem from './model';
 
-const menuItems = [
+const menuItems: MenuItem[] = [
     {
         id: 1,
         title: 'My Listings',

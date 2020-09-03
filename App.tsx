@@ -1,8 +1,8 @@
 import React from 'react';
-import AccountScreen from './app/screens/AccountScreen';
+import ListingsScreen from './app/screens/ListingsScreen';
 
 const App = () => {
-    return <AccountScreen />;
+    return <ListingsScreen />;
 };
 
 export default App;
