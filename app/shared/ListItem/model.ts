@@ -4,7 +4,7 @@ export default interface Props {
     title: string;
     subtitle?: string;
     image?: number;
-    ImageComponent?: ReactNode;
+    IconComponent?: ReactNode;
     onPress?: () => void;
     renderRightActions?: () => void;
 }

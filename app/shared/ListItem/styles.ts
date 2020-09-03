@@ -1,10 +1,12 @@
 import { StyleSheet } from 'react-native';
+
 import colors from '../../config/colors';
 
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        padding: 15
+        padding: 15,
+        backgroundColor: colors.white
     },
     detailsContainer: {
         marginLeft: 10,

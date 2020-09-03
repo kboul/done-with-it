@@ -11,7 +11,7 @@ const ListItem = ({
     title,
     subtitle,
     image,
-    ImageComponent,
+    IconComponent,
     onPress,
     renderRightActions
 }: Props) => {
@@ -21,7 +21,7 @@ const ListItem = ({
                 underlayColor={colors.lightGray}
                 onPress={onPress}>
                 <View style={styles.container}>
-                    {ImageComponent}
+                    {IconComponent}
                     {image && <Image source={image} style={styles.image} />}
                     <View style={styles.detailsContainer}>
                         <AppText style={styles.title}>{title}</AppText>
