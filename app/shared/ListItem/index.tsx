@@ -3,7 +3,7 @@ import { View, Image, TouchableHighlight } from 'react-native';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 
 import AppText from '../AppText';
-import IListItem from './model';
+import Props from './model';
 import styles from './styles';
 import colors from '../../config/colors';
 
@@ -14,7 +14,7 @@ const ListItem = ({
     ImageComponent,
     onPress,
     renderRightActions
-}: IListItem) => {
+}: Props) => {
     return (
         <Swipeable renderRightActions={renderRightActions}>
             <TouchableHighlight

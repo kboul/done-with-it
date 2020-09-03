@@ -1,4 +1,6 @@
+import { ReactElement } from 'react';
+
 export default interface IAppText {
-    children: React.ReactElement | string;
+    children: ReactElement | string;
     style?: Object;
 }

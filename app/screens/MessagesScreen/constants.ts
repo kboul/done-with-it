@@ -1,6 +1,6 @@
-import IMessage from './model';
+import Message from './model';
 
-const initialMessages: IMessage[] = [
+const initialMessages: Message[] = [
     {
         id: 1,
         title: 'T1',

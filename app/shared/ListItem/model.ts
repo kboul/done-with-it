@@ -1,10 +1,10 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
-export default interface IListItem {
+export default interface Props {
     title: string;
     subtitle?: string;
     image?: number;
-    ImageComponent?: React.ReactNode;
+    ImageComponent?: ReactNode;
     onPress?: () => void;
     renderRightActions?: () => void;
 }

@@ -5,14 +5,14 @@ import Screen from '../../shared/Screen';
 import ListItemSeparator from '../../shared/ListItemSeparator';
 import ListItem from '../../shared/ListItem';
 import ListItemDeleteAction from '../../shared/ListItemDeleteAction';
-import IMessage from './model';
+import Message from './model';
 import initialMessages from './constants';
 
 const MessagesScreen = () => {
     const [messages, setMessages] = useState(initialMessages);
     const [refreshing, setRefreshing] = useState(false);
 
-    const handleMessageDelete = (message: IMessage) => {
+    const handleMessageDelete = (message: Message) => {
         // delete the message from messages
         setMessages(prevState => prevState.filter(m => m.id !== message.id));
         // call the server

@@ -1,4 +1,4 @@
-export default interface IAppButton {
+export default interface Props {
     title: string;
     color: string;
     onPress: () => void;

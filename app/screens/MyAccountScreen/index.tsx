@@ -32,7 +32,7 @@ const MyAccountScreen = () => {
                         <Icon
                             name="logout"
                             backgroundColor="yellow"
-                            iconColor="#ffe66d "
+                            iconColor="#ffe66d"
                         />
                     }
                 />

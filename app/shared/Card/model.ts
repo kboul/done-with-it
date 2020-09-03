@@ -1,4 +1,4 @@
-export default interface ICard {
+export default interface Props {
     image: number;
     title: string;
     subtitle: string;

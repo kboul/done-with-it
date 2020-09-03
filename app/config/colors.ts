@@ -1,14 +1,6 @@
-interface Icolors {
-    primary: string;
-    secondary: string;
-    black: string;
-    white: string;
-    mediumGray: string;
-    lightGray: string;
-    danger: string;
-}
+import { Colors } from './model';
 
-const colors: Icolors = {
+const colors: Colors = {
     primary: '#fc5c65',
     secondary: '#4ecdc4',
     black: '#000',
