@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export default interface Props {
+export default interface ListItemProps {
     title: string;
     subtitle?: string;
     image?: number;

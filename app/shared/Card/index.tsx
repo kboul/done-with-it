@@ -2,10 +2,10 @@ import React from 'react';
 import { View, Image } from 'react-native';
 
 import AppText from '../AppText';
-import Props from './model';
+import CardProps from './model';
 import styles from './styles';
 
-const Card = ({ image, title, subtitle }: Props) => {
+const Card = ({ image, title, subtitle }: CardProps) => {
     return (
         <View style={styles.container}>
             <Image source={image} style={styles.image} />

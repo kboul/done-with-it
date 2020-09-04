@@ -1,3 +1,3 @@
-export default interface IListItemDeleteAction {
+export default interface ListItemDeleteActionProps {
     onPress: () => void;
 }

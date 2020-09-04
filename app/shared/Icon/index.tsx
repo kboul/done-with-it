@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import IIcon from './model';
+import IconProps from './model';
 import colors from '../../config/colors';
 
 const Icon = ({
@@ -10,7 +10,7 @@ const Icon = ({
     size = 40,
     backgroundColor = colors.black,
     iconColor = colors.white
-}: IIcon) => {
+}: IconProps) => {
     return (
         <View
             style={{

@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-export default interface IAppText {
+export default interface AppTextProps {
     children: ReactElement | string;
     style?: Object;
 }

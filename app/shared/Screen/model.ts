@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export default interface Props {
+export default interface ScreenProps {
     children: ReactNode;
-    style: Object;
+    style?: Object;
 }

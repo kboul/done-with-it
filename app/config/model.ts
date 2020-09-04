@@ -5,6 +5,7 @@ interface Colors {
     white: string;
     mediumGray: string;
     lightGray: string;
+    dark: string;
     danger: string;
 }
 

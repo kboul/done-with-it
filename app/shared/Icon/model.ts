@@ -1,4 +1,4 @@
-export default interface Props {
+export default interface IconProps {
     name: string;
     size?: number;
     backgroundColor?: string;

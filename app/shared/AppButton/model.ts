@@ -1,4 +1,4 @@
-export default interface Props {
+export default interface AppButtonProps {
     title: string;
     color: string;
     onPress: () => void;
