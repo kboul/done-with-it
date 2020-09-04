@@ -1,13 +1,13 @@
 import React from 'react';
 import AppTextInput from './app/shared/AppTextInput';
-import AppText from './app/shared/AppText';
 import Screen from './app/shared/Screen';
+import AppPicker from './app/shared/AppPicker';
 
 const App = () => {
     return (
         <Screen>
-            <AppTextInput placeholder="placeholder" icon="email" />
-            <AppText>Red Jacket for sale</AppText>
+            <AppPicker icon="apps" placeholder="Category" />
+            <AppTextInput icon="email" placeholder="Email" />
         </Screen>
     );
 };
