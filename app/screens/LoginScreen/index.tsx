@@ -2,9 +2,9 @@ import React from 'react';
 import { Image } from 'react-native';
 import { Formik } from 'formik';
 
-import AppButton from '../../shared/AppButton';
 import AppFormField from '../../shared/AppFormField';
 import Screen from '../../shared/Screen';
+import SubmitButton from '../../shared/SubmitButton';
 import validationSchema from './valdiationSchmema';
 import styles from './styles';
 
@@ -19,7 +19,7 @@ const LoginScreen = () => {
                 initialValues={{ email: '', password: '' }}
                 onSubmit={values => console.log(values)}
                 validationSchema={validationSchema}>
-                {({ handleSubmit }) => (
+                {() => (
                     <>
                         <AppFormField
                             autoCapitalize="none"
@@ -39,7 +39,7 @@ const LoginScreen = () => {
                             secureTextEntry
                             textContentType="password"
                         />
-                        <AppButton title="Login" onPress={handleSubmit} />
+                        <SubmitButton title="Login" />
                     </>
                 )}
             </Formik>
