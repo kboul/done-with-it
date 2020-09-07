@@ -1,11 +1,9 @@
 import React from 'react';
 import { Image } from 'react-native';
 
-import AppForm from '../../shared/AppForm';
-import AppFormField from '../../shared/AppFormField';
+import { AppForm, AppFormField, SubmitButton } from '../../shared/forms';
 import Screen from '../../shared/Screen';
-import SubmitButton from '../../shared/SubmitButton';
-import validationSchema from './valdiationSchmema';
+import validationSchema from './validationSchema';
 import styles from './styles';
 
 export default function LoginScreen() {
