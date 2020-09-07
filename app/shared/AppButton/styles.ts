@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         alignItems: 'center', //  x axis
         justifyContent: 'center', // y axis
-        margin: 10
+        marginTop: 10
     },
     buttonText: {
         color: colors.white,

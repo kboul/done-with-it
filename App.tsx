@@ -1,31 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import AppTextInput from './app/shared/AppTextInput';
-import Screen from './app/shared/Screen';
-import AppPicker from './app/shared/AppPicker';
-
-import { Item } from './app/shared/AppPicker/model';
-
-const categories: Item[] = [
-    { label: 'Furniture', value: 1 },
-    { label: 'Clothing', value: 2 },
-    { label: 'Cameras', value: 3 }
-];
+import LoginScreen from './app/screens/LoginScreen';
 
 const App = () => {
-    const [category, setCategory] = useState(categories[0]);
-    return (
-        <Screen>
-            <AppPicker
-                icon="apps"
-                placeholder="Category"
-                items={categories}
-                selectedItem={category}
-                onItemSelect={item => setCategory(item)}
-            />
-            <AppTextInput icon="email" placeholder="Email" />
-        </Screen>
-    );
+    return <LoginScreen />;
 };
 
 export default App;

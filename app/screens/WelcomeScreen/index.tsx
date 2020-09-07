@@ -13,7 +13,7 @@ const WelcomeScreen = () => {
             blurRadius={2}>
             <View style={styles.logoContainer}>
                 <Image
-                    source={require('./assets/logo-red.png')}
+                    source={require('../../assets/logo-red.png')}
                     style={styles.logo}
                 />
                 <Text style={styles.text}>Sell what you don&apos;t need</Text>
@@ -22,7 +22,6 @@ const WelcomeScreen = () => {
             <View style={styles.buttonsContainer}>
                 <AppButton
                     title="login"
-                    color={colors.primary}
                     onPress={() => console.log('press to login')}
                 />
                 <AppButton
