@@ -2,10 +2,12 @@ import React from 'react';
 import { Image } from 'react-native';
 import { Formik } from 'formik';
 
-import Screen from '../../shared/Screen';
-import styles from './styles';
-import AppTextInput from '../../shared/AppTextInput';
 import AppButton from '../../shared/AppButton';
+import AppTextInput from '../../shared/AppTextInput';
+import ErrorMessage from '../../shared/ErrorMessage';
+import Screen from '../../shared/Screen';
+import validationSchema from './valdiationSchmema';
+import styles from './styles';
 
 const LoginScreen = () => {
     return (
@@ -16,8 +18,9 @@ const LoginScreen = () => {
             />
             <Formik
                 initialValues={{ email: '', password: '' }}
-                onSubmit={values => console.log(values)}>
-                {({ handleChange, handleSubmit }) => (
+                onSubmit={values => console.log(values)}
+                validationSchema={validationSchema}>
+                {({ handleChange, handleSubmit, errors }) => (
                     <>
                         <AppTextInput
                             autoCapitalize="none"
@@ -28,6 +31,7 @@ const LoginScreen = () => {
                             placeholder="Email"
                             textContentType="emailAddress"
                         />
+                        <ErrorMessage error={errors.email} />
                         <AppTextInput
                             autoCapitalize="none"
                             autoCorrect={false}
@@ -37,6 +41,7 @@ const LoginScreen = () => {
                             secureTextEntry
                             textContentType="password"
                         />
+                        <ErrorMessage error={errors.password} />
                         <AppButton title="Login" onPress={handleSubmit} />
                     </>
                 )}
