@@ -20,28 +20,42 @@ const LoginScreen = () => {
                 initialValues={{ email: '', password: '' }}
                 onSubmit={values => console.log(values)}
                 validationSchema={validationSchema}>
-                {({ handleChange, handleSubmit, errors }) => (
+                {({
+                    handleChange,
+                    handleSubmit,
+                    errors,
+                    setFieldTouched,
+                    touched
+                }) => (
                     <>
                         <AppTextInput
                             autoCapitalize="none"
                             autoCorrect={false}
                             icon="email"
                             keyboardType="email-address"
+                            onBlur={() => setFieldTouched('email')}
                             onChangeText={handleChange('email')}
                             placeholder="Email"
                             textContentType="emailAddress"
                         />
-                        <ErrorMessage error={errors.email} />
+                        <ErrorMessage
+                            error={errors.email}
+                            touched={touched.email}
+                        />
                         <AppTextInput
                             autoCapitalize="none"
                             autoCorrect={false}
                             icon="lock"
+                            onBlur={() => setFieldTouched('password')}
                             onChangeText={handleChange('password')}
                             placeholder="password"
                             secureTextEntry
                             textContentType="password"
                         />
-                        <ErrorMessage error={errors.password} />
+                        <ErrorMessage
+                            error={errors.password}
+                            touched={touched.password}
+                        />
                         <AppButton title="Login" onPress={handleSubmit} />
                     </>
                 )}
