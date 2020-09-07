@@ -3,8 +3,7 @@ import { Image } from 'react-native';
 import { Formik } from 'formik';
 
 import AppButton from '../../shared/AppButton';
-import AppTextInput from '../../shared/AppTextInput';
-import ErrorMessage from '../../shared/ErrorMessage';
+import AppFormField from '../../shared/AppFormField';
 import Screen from '../../shared/Screen';
 import validationSchema from './valdiationSchmema';
 import styles from './styles';
@@ -20,41 +19,25 @@ const LoginScreen = () => {
                 initialValues={{ email: '', password: '' }}
                 onSubmit={values => console.log(values)}
                 validationSchema={validationSchema}>
-                {({
-                    handleChange,
-                    handleSubmit,
-                    errors,
-                    setFieldTouched,
-                    touched
-                }) => (
+                {({ handleSubmit }) => (
                     <>
-                        <AppTextInput
+                        <AppFormField
                             autoCapitalize="none"
                             autoCorrect={false}
                             icon="email"
                             keyboardType="email-address"
-                            onBlur={() => setFieldTouched('email')}
-                            onChangeText={handleChange('email')}
+                            name="email"
                             placeholder="Email"
                             textContentType="emailAddress"
                         />
-                        <ErrorMessage
-                            error={errors.email}
-                            touched={touched.email}
-                        />
-                        <AppTextInput
+                        <AppFormField
                             autoCapitalize="none"
                             autoCorrect={false}
                             icon="lock"
-                            onBlur={() => setFieldTouched('password')}
-                            onChangeText={handleChange('password')}
+                            name="password"
                             placeholder="password"
                             secureTextEntry
                             textContentType="password"
-                        />
-                        <ErrorMessage
-                            error={errors.password}
-                            touched={touched.password}
                         />
                         <AppButton title="Login" onPress={handleSubmit} />
                     </>
