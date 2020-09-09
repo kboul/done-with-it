@@ -2,10 +2,10 @@ import React from 'react';
 import { View, Image } from 'react-native';
 
 import AppText from '../../shared/AppText';
-import ListItem from '../../shared/ListItem';
+import { ListItem } from '../../shared/lists';
 import styles from './styles';
 
-const ListingDetailsScreen = () => {
+export default function ListingDetails() {
     return (
         <View>
             <Image
@@ -18,13 +18,11 @@ const ListingDetailsScreen = () => {
                 <View style={styles.listItemContainer}>
                     <ListItem
                         image={require('../../assets/mosh.jpg')}
-                        title="Mosh Hamedani"
                         subtitle="5 Listings"
+                        title="Mosh Hamedani"
                     />
                 </View>
             </View>
         </View>
     );
-};
-
-export default ListingDetailsScreen;
+}

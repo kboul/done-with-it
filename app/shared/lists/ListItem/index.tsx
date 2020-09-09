@@ -2,19 +2,19 @@ import React from 'react';
 import { View, Image, TouchableHighlight } from 'react-native';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 
-import AppText from '../AppText';
+import AppText from '../../AppText';
 import ListItemProps from './model';
 import styles from './styles';
-import colors from '../../config/colors';
+import colors from '../../../config/colors';
 
-const ListItem = ({
-    title,
-    subtitle,
+export default function ListItem({
     image,
-    IconComponent,
     onPress,
-    renderRightActions
-}: ListItemProps) => {
+    renderRightActions,
+    subtitle,
+    title,
+    IconComponent
+}: ListItemProps) {
     return (
         <Swipeable renderRightActions={renderRightActions}>
             <TouchableHighlight
@@ -35,6 +35,4 @@ const ListItem = ({
             </TouchableHighlight>
         </Swipeable>
     );
-};
-
-export default ListItem;
+}

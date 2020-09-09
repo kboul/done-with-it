@@ -4,10 +4,10 @@ import { Formik } from 'formik';
 import AppFormProps from './model';
 
 export default function AppForm({
+    children,
     initialValues,
     onSubmit,
-    validationSchema,
-    children
+    validationSchema
 }: AppFormProps) {
     return (
         <Formik

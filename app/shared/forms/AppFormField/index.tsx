@@ -10,9 +10,9 @@ export default function AppFormField({
     ...otherProps
 }: AppFormFieldProps) {
     const {
-        setFieldTouched,
-        handleChange,
         errors,
+        handleChange,
+        setFieldTouched,
         touched
     } = useFormikContext();
     return (

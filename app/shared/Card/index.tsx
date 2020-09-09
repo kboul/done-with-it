@@ -5,7 +5,7 @@ import AppText from '../AppText';
 import CardProps from './model';
 import styles from './styles';
 
-const Card = ({ image, title, subtitle }: CardProps) => {
+export default function Card({ image, subtitle, title }: CardProps) {
     return (
         <View style={styles.container}>
             <Image source={image} style={styles.image} />
@@ -15,6 +15,4 @@ const Card = ({ image, title, subtitle }: CardProps) => {
             </View>
         </View>
     );
-};
-
-export default Card;
+}

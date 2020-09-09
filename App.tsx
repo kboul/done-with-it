@@ -1,9 +1,8 @@
 import React from 'react';
+import Messages from './app/screens/Messages';
 
-import LoginScreen from './app/screens/LoginScreen';
+import Register from './app/screens/Register';
 
-const App = () => {
-    return <LoginScreen />;
-};
-
-export default App;
+export default function App() {
+    return <Messages />;
+}

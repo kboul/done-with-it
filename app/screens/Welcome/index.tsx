@@ -5,7 +5,7 @@ import AppButton from '../../shared/AppButton';
 import colors from '../../config/colors';
 import styles from './styles';
 
-const WelcomeScreen = () => {
+export default function Welcome() {
     return (
         <ImageBackground
             style={styles.background}
@@ -32,6 +32,4 @@ const WelcomeScreen = () => {
             </View>
         </ImageBackground>
     );
-};
-
-export default WelcomeScreen;
+}

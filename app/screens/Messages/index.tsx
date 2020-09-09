@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { FlatList } from 'react-native';
 
 import Screen from '../../shared/Screen';
-import ListItemSeparator from '../../shared/ListItemSeparator';
-import ListItem from '../../shared/ListItem';
-import ListItemDeleteAction from '../../shared/ListItemDeleteAction';
+import {
+    ListItem,
+    ListItemDeleteAction,
+    ListItemSeparator
+} from '../../shared/lists';
 import Message from './model';
 import initialMessages from './constants';
 
-const MessagesScreen = () => {
+export default function Messages() {
     const [messages, setMessages] = useState(initialMessages);
     const [refreshing, setRefreshing] = useState(false);
 
@@ -23,10 +25,10 @@ const MessagesScreen = () => {
             <FlatList
                 data={messages}
                 keyExtractor={message => message.id.toString()}
+                onRefresh={() => setMessages([messages[1]])}
+                refreshing={refreshing}
                 renderItem={({ item }) => (
                     <ListItem
-                        title={item.title}
-                        subtitle={item.description}
                         image={item.image}
                         onPress={() => console.log('Message selected', item)}
                         renderRightActions={() => (
@@ -34,14 +36,12 @@ const MessagesScreen = () => {
                                 onPress={() => handleMessageDelete(item)}
                             />
                         )}
+                        subtitle={item.description}
+                        title={item.title}
                     />
                 )}
                 ItemSeparatorComponent={ListItemSeparator}
-                refreshing={refreshing}
-                onRefresh={() => setMessages([messages[1]])}
             />
         </Screen>
     );
-};
-
-export default MessagesScreen;
+}

@@ -6,7 +6,7 @@ import Screen from '../../shared/Screen';
 import listings from './constants';
 import styles from './styles';
 
-const ListingsScreen = () => {
+export default function Listings() {
     return (
         <Screen style={styles.screen}>
             <FlatList
@@ -22,6 +22,4 @@ const ListingsScreen = () => {
             />
         </Screen>
     );
-};
-
-export default ListingsScreen;
+}

@@ -3,10 +3,12 @@ import { View, TouchableWithoutFeedback } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import ListItemDeleteActionProps from './model';
-import colors from '../../config/colors';
+import colors from '../../../config/colors';
 import styles from './styles';
 
-const ListItemDeleteAction = ({ onPress }: ListItemDeleteActionProps) => {
+export default function ListItemDeleteAction({
+    onPress
+}: ListItemDeleteActionProps) {
     return (
         <TouchableWithoutFeedback onPress={onPress}>
             <View style={styles.container}>
@@ -18,6 +20,4 @@ const ListItemDeleteAction = ({ onPress }: ListItemDeleteActionProps) => {
             </View>
         </TouchableWithoutFeedback>
     );
-};
-
-export default ListItemDeleteAction;
+}

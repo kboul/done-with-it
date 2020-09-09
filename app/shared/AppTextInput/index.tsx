@@ -7,20 +7,21 @@ import colors from '../../config/colors';
 import defaultStyles from '../../config/styles';
 import styles from './styles';
 
-const AppTextInput = ({ icon, ...otherProps }: AppTextInputProps) => {
+export default function AppTextInput({
+    icon,
+    ...otherProps
+}: AppTextInputProps) {
     return (
         <View style={styles.container}>
             {icon && (
                 <MaterialCommunityIcons
+                    color={colors.mediumGray}
                     name={icon}
                     size={20}
-                    color={colors.mediumGray}
                     style={styles.icon}
                 />
             )}
             <TextInput {...otherProps} style={defaultStyles.text} />
         </View>
     );
-};
-
-export default AppTextInput;
+}

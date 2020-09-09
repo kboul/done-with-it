@@ -1,22 +1,23 @@
 import React from 'react';
-import { Image } from 'react-native';
 
-import { AppForm, AppFormField, SubmitButton } from '../../shared/forms';
 import Screen from '../../shared/Screen';
+import { AppForm, AppFormField, SubmitButton } from '../../shared/forms';
 import validationSchema from './validationSchema';
 import styles from './styles';
 
-export default function LoginScreen() {
+export default function Register() {
     return (
         <Screen style={styles.container}>
-            <Image
-                source={require('../../assets/logo-red.png')}
-                style={styles.logo}
-            />
             <AppForm
-                initialValues={{ email: '', password: '' }}
+                initialValues={{ name: '', email: '', password: '' }}
                 onSubmit={values => console.log(values)}
                 validationSchema={validationSchema}>
+                <AppFormField
+                    autoCorrect={false}
+                    icon="account"
+                    name="name"
+                    placeholder="Name"
+                />
                 <AppFormField
                     autoCapitalize="none"
                     autoCorrect={false}
@@ -35,7 +36,7 @@ export default function LoginScreen() {
                     secureTextEntry
                     textContentType="password"
                 />
-                <SubmitButton title="Login" />
+                <SubmitButton title="Register" />
             </AppForm>
         </Screen>
     );

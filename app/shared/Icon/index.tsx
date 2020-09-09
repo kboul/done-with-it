@@ -5,12 +5,12 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import IconProps from './model';
 import colors from '../../config/colors';
 
-const Icon = ({
+export default function Icon({
     name,
     size = 40,
     backgroundColor = colors.black,
     iconColor = colors.white
-}: IconProps) => {
+}: IconProps) {
     return (
         <View
             style={{
@@ -22,13 +22,11 @@ const Icon = ({
                 alignItems: 'center'
             }}>
             <MaterialCommunityIcons
+                back
+                color={iconColor}
                 name={name}
                 size={size * 0.5}
-                color={iconColor}
-                back
             />
         </View>
     );
-};
-
-export default Icon;
+}

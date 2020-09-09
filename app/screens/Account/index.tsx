@@ -2,20 +2,19 @@ import React from 'react';
 import { View, FlatList } from 'react-native';
 
 import Icon from '../../shared/Icon';
-import ListItem from '../../shared/ListItem';
-import ListItemSeparator from '../../shared/ListItemSeparator';
+import { ListItem, ListItemSeparator } from '../../shared/lists';
 import Screen from '../../shared/Screen';
 import menuItems from './constants';
 import styles from './styles';
 
-const MyAccountScreen = () => {
+export default function Account() {
     return (
         <Screen style={styles.screen}>
             <View style={styles.container}>
                 <ListItem
-                    title="Mosh Hamedani"
-                    subtitle="programmingwithmosh@gmail.com"
                     image={require('../../assets/mosh.jpg')}
+                    subtitle="programmingwithmosh@gmail.com"
+                    title="Mosh Hamedani"
                 />
             </View>
             <View style={styles.container}>
@@ -28,8 +27,8 @@ const MyAccountScreen = () => {
                             title={item.title}
                             IconComponent={
                                 <Icon
-                                    name={item.icon.name}
                                     backgroundColor={item.icon.backgroundColor}
+                                    name={item.icon.name}
                                 />
                             }
                         />
@@ -42,6 +41,4 @@ const MyAccountScreen = () => {
             />
         </Screen>
     );
-};
-
-export default MyAccountScreen;
+}

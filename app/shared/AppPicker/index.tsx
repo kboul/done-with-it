@@ -16,13 +16,13 @@ import Screen from '../Screen';
 import colors from '../../config/colors';
 import styles from './styles';
 
-const AppPicker = ({
+export default function AppPicker({
     icon,
     items,
-    selectedItem,
     onItemSelect,
-    placeholder
-}: AppPickerProps) => {
+    placeholder,
+    selectedItem
+}: AppPickerProps) {
     const [modalVisible, setModalVisible] = useState(false);
 
     const handleItemSelect = (item: Item) => {
@@ -77,6 +77,4 @@ const AppPicker = ({
             </Modal>
         </>
     );
-};
-
-export default AppPicker;
+}

@@ -5,11 +5,11 @@ import AppButtonProps from './model';
 import styles from './styles';
 import colors from '../../config/colors';
 
-const AppButton = ({
+export default function AppButton({
     title,
     color = colors.primary,
     onPress
-}: AppButtonProps) => {
+}: AppButtonProps) {
     return (
         <TouchableOpacity
             style={[{ backgroundColor: color }, styles.button]}
@@ -17,6 +17,4 @@ const AppButton = ({
             <Text style={styles.buttonText}>{title}</Text>
         </TouchableOpacity>
     );
-};
-
-export default AppButton;
+}

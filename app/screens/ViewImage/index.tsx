@@ -6,7 +6,7 @@ import styles from './styles';
 
 const iconSize = 24;
 
-const ViewImageScreen = () => {
+export default function ViewImage() {
     return (
         <View style={styles.container}>
             <View style={styles.closeIcon}>
@@ -30,6 +30,4 @@ const ViewImageScreen = () => {
             />
         </View>
     );
-};
-
-export default ViewImageScreen;
+}
