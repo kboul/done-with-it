@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     icon: {
         marginRight: 10
     },
+    placeholder: { color: colors.mediumGray, flex: 1 },
     text: { flex: 1 }
 });
 

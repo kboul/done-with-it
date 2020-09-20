@@ -11,22 +11,22 @@ export default function ViewImage() {
         <View style={styles.container}>
             <View style={styles.closeIcon}>
                 <MaterialCommunityIcons
+                    color="white"
                     name="close"
                     size={iconSize}
-                    color="white"
                 />
             </View>
             <View style={styles.deleteIcon}>
                 <MaterialCommunityIcons
+                    color="white"
                     name="trash-can-outline"
                     size={iconSize}
-                    color="white"
                 />
             </View>
             <ImageBackground
-                style={styles.image}
                 resizeMode="contain"
                 source={require('./chair.jpg')}
+                style={styles.image}
             />
         </View>
     );

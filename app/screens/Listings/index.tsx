@@ -14,9 +14,9 @@ export default function Listings() {
                 keyExtractor={listing => listing.id.toString()}
                 renderItem={({ item }) => (
                     <Card
-                        title={item.title}
-                        subtitle={`$ ${item.price}`}
                         image={item.image}
+                        subtitle={`$ ${item.price}`}
+                        title={item.title}
                     />
                 )}
             />

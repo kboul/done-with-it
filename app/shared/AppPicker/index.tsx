@@ -52,23 +52,29 @@ export default function AppPicker({
                 <View style={styles.container}>
                     {icon && (
                         <MaterialCommunityIcons
+                            color={colors.mediumGray}
                             name={icon}
                             size={20}
-                            color={colors.mediumGray}
                             style={styles.icon}
                         />
                     )}
-                    <AppText style={styles.text}>
-                        {selectedItem ? selectedItem.label : placeholder}
-                    </AppText>
+                    {selectedItem ? (
+                        <AppText style={styles.text}>
+                            {selectedItem.label}
+                        </AppText>
+                    ) : (
+                        <AppText style={styles.placeholder}>
+                            {placeholder}
+                        </AppText>
+                    )}
                     <MaterialCommunityIcons
+                        color={colors.mediumGray}
                         name="chevron-down"
                         size={20}
-                        color={colors.mediumGray}
                     />
                 </View>
             </TouchableWithoutFeedback>
-            <Modal visible={modalVisible} animationType="slide">
+            <Modal animationType="slide" visible={modalVisible}>
                 {Platform.OS === 'android' ? (
                     modalContent
                 ) : (

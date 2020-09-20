@@ -1,8 +1,31 @@
-import React from 'react';
-import Messages from './app/screens/Messages';
+import React, { useState } from 'react';
 
-import Register from './app/screens/Register';
+import AppTextInput from './app/shared/AppTextInput';
+import Screen from './app/shared/Screen';
+import AppPicker from './app/shared/AppPicker';
 
-export default function App() {
-    return <Messages />;
-}
+import { Item } from './app/shared/AppPicker/model';
+
+const categories: Item[] = [
+    { label: 'Furniture', value: 1 },
+    { label: 'Clothing', value: 2 },
+    { label: 'Cameras', value: 3 }
+];
+
+const App = () => {
+    const [category, setCategory] = useState(categories[0]);
+    return (
+        <Screen>
+            <AppPicker
+                icon="apps"
+                items={categories}
+                onItemSelect={item => setCategory(item)}
+                placeholder="Category"
+                selectedItem={category}
+            />
+            <AppTextInput icon="email" placeholder="Email" />
+        </Screen>
+    );
+};
+
+export default App;

@@ -8,9 +8,9 @@ import styles from './styles';
 export default function Welcome() {
     return (
         <ImageBackground
-            style={styles.background}
+            blurRadius={2}
             source={require('./assets/background.jpg')}
-            blurRadius={2}>
+            style={styles.background}>
             <View style={styles.logoContainer}>
                 <Image
                     source={require('../../assets/logo-red.png')}

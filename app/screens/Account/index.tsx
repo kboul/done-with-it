@@ -21,7 +21,6 @@ export default function Account() {
                 <FlatList
                     data={menuItems}
                     keyExtractor={menuItem => menuItem.id.toString()}
-                    ItemSeparatorComponent={ListItemSeparator}
                     renderItem={({ item }) => (
                         <ListItem
                             title={item.title}
@@ -33,11 +32,12 @@ export default function Account() {
                             }
                         />
                     )}
+                    ItemSeparatorComponent={ListItemSeparator}
                 />
             </View>
             <ListItem
                 title="Logout"
-                IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
+                IconComponent={<Icon backgroundColor="#ffe66d" name="logout" />}
             />
         </Screen>
     );
