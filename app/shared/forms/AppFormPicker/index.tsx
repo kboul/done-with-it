@@ -8,6 +8,7 @@ import AppFormPickerProps from './model';
 export default function AppFormPicker({
     items,
     name,
+    PickerItemComponent,
     placeholder
 }: AppFormPickerProps) {
     const { errors, setFieldValue, touched, values } = useFormikContext<
@@ -18,6 +19,7 @@ export default function AppFormPicker({
             <AppPicker
                 items={items}
                 onItemSelect={item => setFieldValue(name, item)}
+                PickerItemComponent={PickerItemComponent}
                 placeholder={placeholder}
                 selectedItem={values[name]}
             />

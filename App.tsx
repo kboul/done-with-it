@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Messages from './app/screens/Messages';
+import ListingEdit from './app/screens/ListingEdit';
 
 const App = () => {
-    return <Messages />;
+    return <ListingEdit />;
 };
 
 export default App;

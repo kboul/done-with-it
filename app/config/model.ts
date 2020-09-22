@@ -1,12 +1,12 @@
 interface Colors {
+    black: string;
+    danger: string;
+    dark: string;
+    lightGray: string;
     primary: string;
     secondary: string;
-    black: string;
-    white: string;
     mediumGray: string;
-    lightGray: string;
-    dark: string;
-    danger: string;
+    white: string;
 }
 
 export { Colors };

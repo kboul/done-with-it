@@ -20,6 +20,7 @@ export default function AppPicker({
     icon,
     items,
     onItemSelect,
+    PickerItemComponent = PickerItem,
     placeholder,
     selectedItem
 }: AppPickerProps) {
@@ -37,7 +38,7 @@ export default function AppPicker({
                 data={items}
                 keyExtractor={item => item.value.toString()}
                 renderItem={({ item }) => (
-                    <PickerItem
+                    <PickerItemComponent
                         label={item.label}
                         onPress={() => handleItemSelect(item)}
                     />

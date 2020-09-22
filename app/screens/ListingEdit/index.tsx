@@ -6,8 +6,10 @@ import {
     AppFormPicker,
     SubmitButton
 } from '../../shared/forms';
+import CategoryPickerItem from '../../shared/CategoryPickerItem';
 import Screen from '../../shared/Screen';
 import validationSchema from './validationSchema';
+import Values from './model';
 import categories from './constants';
 import styles from './styles';
 
@@ -21,7 +23,7 @@ export default function ListingEdit() {
                     category: null,
                     description: ''
                 }}
-                onSubmit={values => console.log(values)}
+                onSubmit={(values: Values) => console.log(values)}
                 validationSchema={validationSchema}>
                 <AppFormField
                     maxLength={255}
@@ -36,6 +38,7 @@ export default function ListingEdit() {
                 />
                 <AppFormPicker
                     items={categories}
+                    PickerItemComponent={CategoryPickerItem}
                     name="category"
                     placeholder="Category"
                 />

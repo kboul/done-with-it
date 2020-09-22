@@ -3,6 +3,7 @@ import React from 'react';
 import Screen from '../../shared/Screen';
 import { AppForm, AppFormField, SubmitButton } from '../../shared/forms';
 import validationSchema from './validationSchema';
+import Values from './model';
 import styles from './styles';
 
 export default function Register() {
@@ -10,7 +11,7 @@ export default function Register() {
         <Screen style={styles.container}>
             <AppForm
                 initialValues={{ name: '', email: '', password: '' }}
-                onSubmit={values => console.log(values)}
+                onSubmit={(values: Values) => console.log(values)}
                 validationSchema={validationSchema}>
                 <AppFormField
                     autoCorrect={false}

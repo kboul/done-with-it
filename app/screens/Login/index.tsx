@@ -4,6 +4,7 @@ import { Image } from 'react-native';
 import { AppForm, AppFormField, SubmitButton } from '../../shared/forms';
 import Screen from '../../shared/Screen';
 import validationSchema from './validationSchema';
+import Values from './model';
 import styles from './styles';
 
 export default function Login() {
@@ -15,7 +16,7 @@ export default function Login() {
             />
             <AppForm
                 initialValues={{ email: '', password: '' }}
-                onSubmit={values => console.log(values)}
+                onSubmit={(values: Values) => console.log(values)}
                 validationSchema={validationSchema}>
                 <AppFormField
                     autoCapitalize="none"
