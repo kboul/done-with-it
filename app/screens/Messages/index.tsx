@@ -36,6 +36,7 @@ export default function Messages() {
                                 onPress={() => handleMessageDelete(item)}
                             />
                         )}
+                        showChevrons
                         subtitle={item.description}
                         title={item.title}
                     />

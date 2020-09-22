@@ -5,10 +5,12 @@ import colors from '../../../config/colors';
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
+        alignItems: 'center',
         padding: 15,
         backgroundColor: colors.white
     },
     detailsContainer: {
+        flex: 1,
         marginLeft: 10,
         justifyContent: 'center'
     },
