@@ -46,6 +46,7 @@
                 "mjs": "never"
             }
         ],
-        "import/no-extraneous-dependencies": "off"
+        "import/no-extraneous-dependencies": "off",
+        "no-use-before-define": "off"
     }
 }
