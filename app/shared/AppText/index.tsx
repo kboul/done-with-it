@@ -4,6 +4,14 @@ import { Text } from 'react-native';
 import AppTextProps from './model';
 import defaultStyles from '../../config/styles';
 
-export default function AppText({ children, style }: AppTextProps) {
-    return <Text style={[defaultStyles.text, style]}>{children}</Text>;
+export default function AppText({
+    children,
+    style,
+    ...otherProps
+}: AppTextProps) {
+    return (
+        <Text {...otherProps} style={[defaultStyles.text, style]}>
+            {children}
+        </Text>
+    );
 }

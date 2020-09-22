@@ -5,8 +5,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import AppText from '../../AppText';
 import ListItemProps from './model';
-import styles from './styles';
 import colors from '../../../config/colors';
+import styles from './styles';
 
 export default function ListItem({
     image,
@@ -26,9 +26,11 @@ export default function ListItem({
                     {IconComponent}
                     {image && <Image source={image} style={styles.image} />}
                     <View style={styles.detailsContainer}>
-                        <AppText style={styles.title}>{title}</AppText>
+                        <AppText numberOfLines={1} style={styles.title}>
+                            {title}
+                        </AppText>
                         {subtitle && (
-                            <AppText style={styles.subtitle}>
+                            <AppText numberOfLines={2} style={styles.subtitle}>
                                 {subtitle}
                             </AppText>
                         )}
