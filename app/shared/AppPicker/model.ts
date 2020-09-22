@@ -1,7 +1,4 @@
-interface Item {
-    label: string;
-    value: number;
-}
+import { Item } from '../models';
 
 interface AppPickerProps {
     icon?: string;
