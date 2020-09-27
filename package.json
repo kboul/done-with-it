@@ -2,6 +2,8 @@
     "main": "node_modules/expo/AppEntry.js",
     "scripts": {
         "start": "expo start",
+        "test": "jest --watchAll",
+        "test:coverage": "jest --coverage",
         "android": "expo start --android",
         "ios": "expo start --ios",
         "web": "expo start --web",
@@ -10,6 +12,7 @@
     },
     "dependencies": {
         "@react-native-community/hooks": "^2.6.0",
+        "@types/jest": "^26.0.14",
         "@types/yup": "^0.29.7",
         "expo": "~38.0.10",
         "expo-constants": "^9.1.1",
@@ -24,6 +27,9 @@
     },
     "devDependencies": {
         "@babel/core": "^7.11.6",
+        "@testing-library/jest-dom": "^5.11.4",
+        "@testing-library/jest-native": "^3.4.2",
+        "@testing-library/react-native": "^7.0.2",
         "@types/react": "~16.9.49",
         "@types/react-native": "~0.63.19",
         "@typescript-eslint/eslint-plugin": "^4.1.1",
@@ -37,9 +43,20 @@
         "eslint-plugin-prettier": "^3.1.4",
         "eslint-plugin-react": "^7.20.6",
         "eslint-plugin-react-hooks": "^4.1.2",
+        "jest": "^26.4.2",
+        "jest-dom": "^4.0.0",
+        "jest-expo": "^39.0.0",
         "prettier": "^2.1.2",
+        "react-test-renderer": "^16.13.1",
         "typescript": "4.0.3",
         "yargs-parser": "^20.0.0"
     },
-    "private": true
+    "private": true,
+    "jest": {
+        "preset": "jest-expo",
+        "transformIgnorePatterns": [
+            "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
+        ],
+        "automock": false
+    }
 }
