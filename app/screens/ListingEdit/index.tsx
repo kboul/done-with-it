@@ -9,20 +9,15 @@ import {
 import CategoryPickerItem from '../../shared/CategoryPickerItem';
 import Screen from '../../shared/Screen';
 import validationSchema from './validationSchema';
-import Values from './model';
-import categories from './constants';
+import { Values } from './models';
+import { categories, initialValues } from './constants';
 import styles from './styles';
 
 export default function ListingEdit() {
     return (
         <Screen style={styles.container}>
             <AppForm
-                initialValues={{
-                    title: '',
-                    price: '',
-                    category: null,
-                    description: ''
-                }}
+                initialValues={initialValues}
                 onSubmit={(values: Values) => console.log(values)}
                 validationSchema={validationSchema}>
                 <AppFormField
@@ -38,8 +33,9 @@ export default function ListingEdit() {
                 />
                 <AppFormPicker
                     items={categories}
-                    PickerItemComponent={CategoryPickerItem}
                     name="category"
+                    numberOfColumns={3}
+                    PickerItemComponent={CategoryPickerItem}
                     placeholder="Category"
                 />
                 <AppFormField

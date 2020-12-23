@@ -8,6 +8,7 @@ import AppFormPickerProps from './model';
 export default function AppFormPicker({
     items,
     name,
+    numberOfColumns,
     PickerItemComponent,
     placeholder
 }: AppFormPickerProps) {
@@ -18,6 +19,7 @@ export default function AppFormPicker({
         <>
             <AppPicker
                 items={items}
+                numberOfColumns={numberOfColumns}
                 onItemSelect={item => setFieldValue(name, item)}
                 PickerItemComponent={PickerItemComponent}
                 placeholder={placeholder}

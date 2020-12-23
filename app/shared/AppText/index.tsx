@@ -10,7 +10,7 @@ export default function AppText({
     ...otherProps
 }: AppTextProps) {
     return (
-        <Text {...otherProps} style={[defaultStyles.text, style]}>
+        <Text style={[defaultStyles.text, style]} {...otherProps}>
             {children}
         </Text>
     );

@@ -4,26 +4,24 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import IconProps from './model';
 import colors from '../../config/colors';
+import styles from './styles';
 
 export default function Icon({
-    name,
-    size = 40,
     backgroundColor = colors.black,
-    iconColor = colors.white
+    color = colors.white,
+    name,
+    size = 40
 }: IconProps) {
+    const dynamicViewStyle = {
+        width: size,
+        borderRadius: size / 2,
+        backgroundColor
+    };
     return (
-        <View
-            style={{
-                width: size,
-                height: 40,
-                borderRadius: size / 2,
-                backgroundColor,
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}>
+        <View style={[styles.view, dynamicViewStyle]}>
             <MaterialCommunityIcons
                 back
-                color={iconColor}
+                color={color}
                 name={name}
                 size={size * 0.5}
             />

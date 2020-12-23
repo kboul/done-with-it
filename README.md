@@ -12,6 +12,12 @@ sudo npm i -g expo-cli
 
 Install expo-client on your phone
 
+In case expo has been updated:
+
+```
+expo update
+```
+
 clone the project
 
 select master branch
@@ -25,3 +31,11 @@ npm install
 ```
 expo start
 ```
+
+### Expo-icons
+
+https://icons.expo.fyi/
+
+### VS code shortcuts
+
+rnfs - react native functional component with style

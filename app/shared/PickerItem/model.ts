@@ -1,4 +1,4 @@
 export default interface PickerItemProps {
-    label: string;
+    item: { label: string };
     onPress: () => void;
 }

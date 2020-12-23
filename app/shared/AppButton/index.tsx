@@ -6,8 +6,8 @@ import styles from './styles';
 import colors from '../../config/colors';
 
 export default function AppButton({
-    title,
     color = colors.primary,
+    title,
     onPress
 }: AppButtonProps) {
     return (

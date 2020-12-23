@@ -9,16 +9,17 @@ import {
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import { AppPickerProps, Item } from './model';
 import AppText from '../AppText';
 import PickerItem from '../PickerItem';
 import Screen from '../Screen';
+import { AppPickerProps, Item } from './model';
 import colors from '../../config/colors';
 import styles from './styles';
 
 export default function AppPicker({
     icon,
     items,
+    numberOfColumns = 1,
     onItemSelect,
     PickerItemComponent = PickerItem,
     placeholder,
@@ -27,8 +28,9 @@ export default function AppPicker({
     const [modalVisible, setModalVisible] = useState(false);
 
     const handleItemSelect = (item: Item) => {
-        setModalVisible(false);
+        console.log(item);
         onItemSelect(item);
+        setModalVisible(false);
     };
 
     const modalContent = (
@@ -37,9 +39,10 @@ export default function AppPicker({
             <FlatList
                 data={items}
                 keyExtractor={item => item.value.toString()}
+                numColumns={numberOfColumns}
                 renderItem={({ item }) => (
                     <PickerItemComponent
-                        label={item.label}
+                        item={item}
                         onPress={() => handleItemSelect(item)}
                     />
                 )}
