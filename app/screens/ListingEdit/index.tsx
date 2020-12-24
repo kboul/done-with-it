@@ -9,17 +9,20 @@ import {
 } from '../../shared/forms';
 import CategoryPickerItem from '../../shared/CategoryPickerItem';
 import Screen from '../../shared/Screen';
+import useLocation from '../../shared/hooks/useLocation';
 import validationSchema from './validationSchema';
 import { Values } from './models';
 import { categories, initialValues } from './constants';
 import styles from './styles';
 
 export default function ListingEdit() {
+    const { location } = useLocation();
+
     return (
         <Screen style={styles.container}>
             <AppForm
                 initialValues={initialValues}
-                onSubmit={(values: Values) => console.log(values)}
+                onSubmit={(values: Values) => console.log(values, location)}
                 validationSchema={validationSchema}>
                 <FormImagePicker name="imageUris" />
                 <FormField maxLength={255} name="title" placeholder="Title" />

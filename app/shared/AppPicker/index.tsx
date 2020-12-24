@@ -28,7 +28,6 @@ export default function AppPicker({
     const [modalVisible, setModalVisible] = useState(false);
 
     const handleItemSelect = (item: Item) => {
-        console.log(item);
         onItemSelect(item);
         setModalVisible(false);
     };
