@@ -1,5 +1,5 @@
 import AppTextInputProps from '../../AppTextInput/model';
 
-export default interface AppFormFieldProps extends AppTextInputProps {
+export default interface FormFieldProps extends AppTextInputProps {
     name: string;
 }

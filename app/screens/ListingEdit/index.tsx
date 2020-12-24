@@ -2,8 +2,9 @@ import React from 'react';
 
 import {
     AppForm,
-    AppFormField,
-    AppFormPicker,
+    FormField,
+    FormImagePicker,
+    FormPicker,
     SubmitButton
 } from '../../shared/forms';
 import CategoryPickerItem from '../../shared/CategoryPickerItem';
@@ -20,25 +21,22 @@ export default function ListingEdit() {
                 initialValues={initialValues}
                 onSubmit={(values: Values) => console.log(values)}
                 validationSchema={validationSchema}>
-                <AppFormField
-                    maxLength={255}
-                    name="title"
-                    placeholder="Title"
-                />
-                <AppFormField
+                <FormImagePicker name="imageUris" />
+                <FormField maxLength={255} name="title" placeholder="Title" />
+                <FormField
                     keyboardType="numeric"
                     maxLength={8} // includes 10000.99
                     name="price"
                     placeholder="Price"
                 />
-                <AppFormPicker
+                <FormPicker
                     items={categories}
                     name="category"
                     numberOfColumns={3}
                     PickerItemComponent={CategoryPickerItem}
                     placeholder="Category"
                 />
-                <AppFormField
+                <FormField
                     maxLength={255}
                     multiline
                     name="description"

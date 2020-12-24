@@ -3,15 +3,15 @@ import { FormikContextType, FormikValues, useFormikContext } from 'formik';
 
 import AppPicker from '../../AppPicker';
 import ErrorMessage from '../ErrorMessage';
-import AppFormPickerProps from './model';
+import FormPickerProps from './model';
 
-export default function AppFormPicker({
+export default function FormPicker({
     items,
     name,
     numberOfColumns,
     PickerItemComponent,
     placeholder
-}: AppFormPickerProps) {
+}: FormPickerProps) {
     const { errors, setFieldValue, touched, values } = useFormikContext<
         FormikContextType<FormikValues>
     >();

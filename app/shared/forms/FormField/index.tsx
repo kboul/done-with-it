@@ -3,12 +3,9 @@ import { useFormikContext } from 'formik';
 
 import AppTextInput from '../../AppTextInput';
 import ErrorMessage from '../ErrorMessage';
-import AppFormFieldProps from './model';
+import FormFieldProps from './model';
 
-export default function AppFormField({
-    name,
-    ...otherProps
-}: AppFormFieldProps) {
+export default function FormField({ name, ...otherProps }: FormFieldProps) {
     const {
         errors,
         handleChange,

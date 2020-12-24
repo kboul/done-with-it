@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image } from 'react-native';
 
-import { AppForm, AppFormField, SubmitButton } from '../../shared/forms';
+import { AppForm, FormField, SubmitButton } from '../../shared/forms';
 import Screen from '../../shared/Screen';
 import validationSchema from './validationSchema';
 import Values from './model';
@@ -18,7 +18,7 @@ export default function Login() {
                 initialValues={{ email: '', password: '' }}
                 onSubmit={(values: Values) => console.log(values)}
                 validationSchema={validationSchema}>
-                <AppFormField
+                <FormField
                     autoCapitalize="none"
                     autoCorrect={false}
                     icon="email"
@@ -27,7 +27,7 @@ export default function Login() {
                     placeholder="Email"
                     textContentType="emailAddress"
                 />
-                <AppFormField
+                <FormField
                     autoCapitalize="none"
                     autoCorrect={false}
                     icon="lock"

@@ -49,6 +49,7 @@ const categories: Category[] = [
 ];
 
 const initialValues = {
+    imageUris: [],
     title: '',
     price: '',
     category: null,
