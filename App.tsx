@@ -1,16 +1,25 @@
 import React, { useState } from 'react';
 
 import Screen from './app/shared/Screen';
-import ImageInput from './app/shared/ImageInput';
+import ImageInputList from './app/shared/ImageInputList';
 
 export default function App() {
-    const [imageUri, setImageUri] = useState('');
+    const [imageUris, setImageUris] = useState<string[]>([]);
+
+    const handleImageAdd = (imageUri: string) => {
+        setImageUris(prevState => [...prevState, imageUri]);
+    };
+
+    const handleImageRemove = (imageUri: string) => {
+        setImageUris(prevState => prevState.filter(uri => uri !== imageUri));
+    };
 
     return (
         <Screen>
-            <ImageInput
-                imageUri={imageUri}
-                onChangeImage={uri => setImageUri(uri)}
+            <ImageInputList
+                imageUris={imageUris}
+                onImageAdd={handleImageAdd}
+                onImageRemove={handleImageRemove}
             />
         </Screen>
     );

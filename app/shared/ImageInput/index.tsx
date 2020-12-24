@@ -9,7 +9,7 @@ import styles from './styles';
 
 export default function ImageInput({
     imageUri,
-    onChangeImage
+    onImageChange
 }: ImageInputProps) {
     const requestCameraPermissions = async () => {
         const { granted } = await ImagePicker.requestCameraPermissionsAsync();
@@ -27,7 +27,7 @@ export default function ImageInput({
                 mediaTypes: ImagePicker.MediaTypeOptions.Images,
                 quality: 0.5
             });
-            if (!result.cancelled) onChangeImage(result.uri);
+            if (!result.cancelled) onImageChange(result.uri);
         } catch (error) {
             console.log('Error reading the image');
         }
@@ -40,7 +40,7 @@ export default function ImageInput({
                 'Delete',
                 'Are you sure you want to delete this image?',
                 [
-                    { text: 'Yes', onPress: () => onChangeImage('') },
+                    { text: 'Yes', onPress: () => onImageChange('') },
                     { text: 'No' }
                 ]
             );
