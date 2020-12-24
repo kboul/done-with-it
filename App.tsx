@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import ListingEdit from './app/screens/ListingEdit';
+import Screen from './app/shared/Screen';
+import ImageInput from './app/shared/ImageInput';
 
-const App = () => <ListingEdit />;
+export default function App() {
+    const [imageUri, setImageUri] = useState('');
 
-export default App;
+    return (
+        <Screen>
+            <ImageInput
+                imageUri={imageUri}
+                onChangeImage={uri => setImageUri(uri)}
+            />
+        </Screen>
+    );
+}

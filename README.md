@@ -1,6 +1,6 @@
 # Done With It
 
-A mobile app to dive into the concepts of react-native using Expo by Mosh Hamedani in Typescript.
+A cross platform mobile app to dive into the concepts of react-native using Expo by Mosh Hamedani written in Typescript.
 
 ## Run the project
 
@@ -35,6 +35,10 @@ expo start
 ### Expo-icons
 
 https://icons.expo.fyi/
+
+### Expo API reference
+
+https://docs.expo.io/versions/latest/
 
 ### VS code shortcuts
 
