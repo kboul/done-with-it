@@ -6,16 +6,16 @@ import Register from '../../screens/Register';
 import Welcome from '../../screens/Welcome';
 
 export default function AuthNavigator() {
-    const Auth = createStackNavigator();
+    const Stack = createStackNavigator();
     return (
-        <Auth.Navigator>
-            <Auth.Screen
+        <Stack.Navigator>
+            <Stack.Screen
                 name="Welcome"
                 component={Welcome}
                 options={{ headerShown: false }}
             />
-            <Auth.Screen name="Login" component={Login} />
-            <Auth.Screen name="Register" component={Register} />
-        </Auth.Navigator>
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Register" component={Register} />
+        </Stack.Navigator>
     );
 }
