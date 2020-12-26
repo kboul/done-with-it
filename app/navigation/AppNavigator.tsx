@@ -1,17 +1,17 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Account from '../screens/AccountScreen';
+import AccountNavigator from './AccountNavigator';
 import FeedNavigator from './FeedNavigator';
-import ListingEdit from '../screens/ListingEdit';
+import ListingEditScreen from '../screens/ListingEditScreen';
 
 export default function AppNavigator() {
     const Tab = createBottomTabNavigator();
     return (
         <Tab.Navigator>
             <Tab.Screen component={FeedNavigator} name="Listings" />
-            <Tab.Screen component={ListingEdit} name="ListingEdit" />
-            <Tab.Screen component={Account} name="Account" />
+            <Tab.Screen component={ListingEditScreen} name="ListingEdit" />
+            <Tab.Screen component={AccountNavigator} name="Account" />
         </Tab.Navigator>
     );
 }

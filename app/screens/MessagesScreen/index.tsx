@@ -10,7 +10,7 @@ import {
 import Message from './model';
 import initialMessages from './constants';
 
-export default function Messages() {
+export default function MessagesScreen() {
     const [messages, setMessages] = useState(initialMessages);
     const [refreshing, setRefreshing] = useState(false);
 

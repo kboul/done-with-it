@@ -1,4 +1,4 @@
-import { Category } from '../../screens/ListingEdit/models';
+import { Category } from '../../screens/ListingEditScreen/models';
 
 export default interface CategoryPickerItemProps {
     item: Category;

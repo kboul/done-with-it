@@ -1,5 +1,5 @@
 import colors from '../../config/colors';
-import MenuItem from './model';
+import { MenuItem } from './model';
 
 const menuItems: MenuItem[] = [
     {
@@ -8,7 +8,8 @@ const menuItems: MenuItem[] = [
         icon: {
             name: 'format-list-bulleted',
             backgroundColor: colors.primary
-        }
+        },
+        targetScreen: ''
     },
     {
         id: 2,
@@ -16,7 +17,8 @@ const menuItems: MenuItem[] = [
         icon: {
             name: 'email',
             backgroundColor: colors.secondary
-        }
+        },
+        targetScreen: 'Messages'
     }
 ];
 

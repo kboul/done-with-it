@@ -15,7 +15,7 @@ import { Values } from './models';
 import { categories, initialValues } from './constants';
 import styles from './styles';
 
-export default function ListingEdit() {
+export default function ListingEditScreen() {
     const { location } = useLocation();
 
     return (
