@@ -13,12 +13,11 @@ export type FeedNavigatorParamList = {
 export default function FeedNavigator() {
     const Stack = createStackNavigator<FeedNavigatorParamList>();
     return (
-        <Stack.Navigator mode="modal">
+        <Stack.Navigator mode="modal" screenOptions={{ headerShown: false }}>
             <Stack.Screen component={ListingsScreen} name="Listings" />
             <Stack.Screen
                 component={ListingDetailsScreen}
                 name="ListingDetails"
-                options={{ headerShown: false }}
             />
         </Stack.Navigator>
     );
