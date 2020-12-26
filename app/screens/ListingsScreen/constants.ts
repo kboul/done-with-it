@@ -1,6 +1,4 @@
-import Listing from './model';
-
-const listings: Listing[] = [
+const listings = [
     {
         id: 1,
         title: 'Red jacket for sale',

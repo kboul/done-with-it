@@ -7,7 +7,7 @@ import Screen from '../../shared/Screen';
 import menuItems from './constants';
 import styles from './styles';
 
-export default function Account() {
+export default function AccountScreen() {
     return (
         <Screen style={styles.screen}>
             <View style={styles.container}>

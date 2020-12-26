@@ -1,5 +1,3 @@
-import { StackNavigationProp } from '@react-navigation/stack';
+import { StackScreenProps } from '@react-navigation/stack';
 
-export default interface WelcomeProps {
-    navigation: StackNavigationProp<any>;
-}
+export default interface WelcomeProps extends StackScreenProps<any> {}

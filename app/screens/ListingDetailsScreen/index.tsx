@@ -3,18 +3,20 @@ import { View, Image } from 'react-native';
 
 import AppText from '../../shared/AppText';
 import { ListItem } from '../../shared/lists';
+import ListingDetailsScreenProps from './model';
 import styles from './styles';
 
-export default function ListingDetails() {
+export default function ListingDetailsScreen({
+    route
+}: ListingDetailsScreenProps) {
+    const listing = route.params;
+    const { image, price, title } = listing;
     return (
         <View>
-            <Image
-                source={require('../../assets/jacket.jpg')}
-                style={styles.image}
-            />
+            <Image source={image} style={styles.image} />
             <View style={styles.detailsContainer}>
-                <AppText style={styles.title}>Red Jacket for sale</AppText>
-                <AppText style={styles.subtitle}>$100</AppText>
+                <AppText style={styles.title}>{title}</AppText>
+                <AppText style={styles.subtitle}>{`$${price}`}</AppText>
                 <View style={styles.listItemContainer}>
                     <ListItem
                         image={require('../../assets/mosh.jpg')}
