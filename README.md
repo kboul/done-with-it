@@ -32,6 +32,10 @@ npm install
 expo start
 ```
 
+### React-native-debugger
+
+Go to [this github repo](https://github.com/jhen0409/react-native-debugger), then click [release-page](https://github.com/jhen0409/react-native-debugger/releases) and download the latest amd54.deb for ubuntu to get an executable. Install the executable and use this like all other app in your computer. [Source](https://stackoverflow.com/questions/56457399/how-to-manually-start-react-native-debugger-on-linux-ubuntu)
+
 ### Expo-icons
 
 https://icons.expo.fyi/

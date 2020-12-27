@@ -2,17 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { FlatList } from 'react-native';
 
 import Card from '../../shared/Card';
+import ErrorMessage from './ErrorMessage';
 import Screen from '../../shared/Screen';
 import listingsApi from '../../api/listings';
 import { Listing, ListingsScreenProps } from './model';
+import { initialState } from './constants';
 import styles from './styles';
 
 export default function ListingsScreen({ navigation }: ListingsScreenProps) {
-    const [listings, setListings] = useState<Listing[]>([]);
+    const [state, setState] = useState(initialState);
 
     const loadListings = async () => {
         const response = await listingsApi.getListings();
-        setListings(response.data as Listing[]);
+        if (!response.ok) {
+            setState(prevState => ({ ...prevState, error: true }));
+            return;
+        }
+        setState({ error: false, listings: response.data as Listing[] });
     };
 
     useEffect(() => {
@@ -22,8 +28,11 @@ export default function ListingsScreen({ navigation }: ListingsScreenProps) {
     const handleCardPress = (item: Listing) =>
         navigation.navigate('ListingDetails', item);
 
+    const { error, listings } = state;
+
     return (
         <Screen style={styles.screen}>
+            {error && <ErrorMessage onPress={loadListings} />}
             <FlatList
                 data={listings}
                 keyExtractor={listing => listing.id.toString()}
