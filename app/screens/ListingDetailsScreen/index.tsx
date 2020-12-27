@@ -10,10 +10,10 @@ export default function ListingDetailsScreen({
     route
 }: ListingDetailsScreenProps) {
     const listing = route.params;
-    const { image, price, title } = listing;
+    const { images, price, title } = listing;
     return (
         <View>
-            <Image source={image} style={styles.image} />
+            <Image source={{ uri: images[0].url }} style={styles.image} />
             <View style={styles.detailsContainer}>
                 <AppText style={styles.title}>{title}</AppText>
                 <AppText style={styles.subtitle}>{`$${price}`}</AppText>

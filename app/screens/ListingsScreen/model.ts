@@ -2,9 +2,14 @@ import { StackNavigationProp } from '@react-navigation/stack';
 
 import { FeedNavigatorParamList } from '../../navigation/FeedNavigator';
 
+interface Image {
+    url: string;
+    thumbnailUrl: string;
+}
+
 interface Listing {
     id: number;
-    image: number;
+    images: Image[];
     price: number;
     title: string;
 }

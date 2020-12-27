@@ -1,5 +1,5 @@
 export default interface CardProps {
-    image: number;
+    imageUrl: string;
     onPress: () => void;
     subtitle: string;
     title: string;
