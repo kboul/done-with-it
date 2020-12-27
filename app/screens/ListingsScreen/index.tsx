@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FlatList } from 'react-native';
 
+import ActivityIndicator from '../../shared/ActivityIndicator';
 import Card from '../../shared/Card';
 import ErrorMessage from './ErrorMessage';
 import Screen from '../../shared/Screen';
@@ -12,13 +13,27 @@ import styles from './styles';
 export default function ListingsScreen({ navigation }: ListingsScreenProps) {
     const [state, setState] = useState(initialState);
 
+    const setValue = (field: string, value: any) => {
+        const tempState = { ...state };
+        tempState[field] = value;
+        setState(tempState);
+    };
+
     const loadListings = async () => {
+        setValue('loading', true);
         const response = await listingsApi.getListings();
+        setValue('loading', false);
+
         if (!response.ok) {
-            setState(prevState => ({ ...prevState, error: true }));
+            setValue('error', true);
             return;
         }
-        setState({ error: false, listings: response.data as Listing[] });
+
+        setState(prevState => ({
+            ...prevState,
+            error: false,
+            listings: response.data as Listing[]
+        }));
     };
 
     useEffect(() => {
@@ -28,11 +43,12 @@ export default function ListingsScreen({ navigation }: ListingsScreenProps) {
     const handleCardPress = (item: Listing) =>
         navigation.navigate('ListingDetails', item);
 
-    const { error, listings } = state;
+    const { error, listings, loading } = state;
 
     return (
         <Screen style={styles.screen}>
             {error && <ErrorMessage onPress={loadListings} />}
+            <ActivityIndicator visible={loading} />
             <FlatList
                 data={listings}
                 keyExtractor={listing => listing.id.toString()}

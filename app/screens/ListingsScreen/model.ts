@@ -24,8 +24,9 @@ interface ListingsScreenProps {
 }
 
 interface State {
-    listings: Listing[];
     error: boolean;
+    listings: Listing[];
+    loading: boolean;
 }
 
 export type { Listing, ListingsScreenProps, State };

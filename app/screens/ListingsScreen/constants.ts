@@ -1,8 +1,9 @@
 import { State } from './model';
 
 const initialState: State = {
+    error: false,
     listings: [],
-    error: false
+    loading: false
 };
 
 export { initialState };
