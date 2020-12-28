@@ -23,7 +23,7 @@ export default function ListingEditScreen() {
     const [visible, setVisible] = useState(false);
     const [progress, setProgress] = useState(0);
 
-    const handleSubmit = async (listing: Listing) => {
+    const handleSubmit = async (listing: Listing, { resetForm }) => {
         setProgress(0);
         setVisible(true);
         const result = await listingsApi.createListing(
@@ -38,6 +38,8 @@ export default function ListingEditScreen() {
             setVisible(false);
             alert('Cound not save the listing.');
         }
+
+        resetForm(initialValues);
     };
 
     const handleAnimationDone = (isCancelled: boolean) => {
