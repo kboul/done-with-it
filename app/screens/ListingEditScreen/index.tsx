@@ -9,20 +9,33 @@ import {
 } from '../../shared/forms';
 import CategoryPickerItem from '../../shared/CategoryPickerItem';
 import Screen from '../../shared/Screen';
+import listingsApi from '../../api/listings';
 import useLocation from '../../shared/hooks/useLocation';
 import validationSchema from './validationSchema';
-import { Values } from './models';
+import { Listing } from './models';
 import { categories, initialValues } from './constants';
 import styles from './styles';
 
 export default function ListingEditScreen() {
     const { location } = useLocation();
 
+    const handleSubmit = async (listing: Listing) => {
+        const result = await listingsApi.createListing({
+            ...listing,
+            location
+        });
+        if (!result.ok) {
+            alert('Cound not save the listing.');
+            return;
+        }
+        alert('Success');
+    };
+
     return (
         <Screen style={styles.container}>
             <AppForm
                 initialValues={initialValues}
-                onSubmit={(values: Values) => console.log(values, location)}
+                onSubmit={handleSubmit}
                 validationSchema={validationSchema}>
                 <FormImagePicker name="imageUris" />
                 <FormField maxLength={255} name="title" placeholder="Title" />

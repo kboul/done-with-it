@@ -1,20 +1,24 @@
 import { useEffect, useState } from 'react';
-import * as Location from 'expo-location';
+import * as ExpoLocation from 'expo-location';
+import { Location } from '../../screens/ListingEditScreen/models';
 
 interface LocationOutput {
-    location: Object;
+    location: Location;
     error: Object;
 }
 
 export default function useLocation(): LocationOutput {
-    const [location, setLocation] = useState({});
+    const [location, setLocation] = useState<Location>({
+        latitude: null,
+        longitude: null
+    });
     const [error, setError] = useState({});
 
     const getLocation = async () => {
         try {
-            const { granted } = await Location.requestPermissionsAsync();
+            const { granted } = await ExpoLocation.requestPermissionsAsync();
             if (!granted) return;
-            const result = await Location.getLastKnownPositionAsync();
+            const result = await ExpoLocation.getLastKnownPositionAsync();
             if (result) {
                 const {
                     coords: { latitude, longitude }
