@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
     AppForm,
@@ -9,6 +9,7 @@ import {
 } from '../../shared/forms';
 import CategoryPickerItem from '../../shared/CategoryPickerItem';
 import Screen from '../../shared/Screen';
+import UploadScreen from '../UploadScreen';
 import listingsApi from '../../api/listings';
 import useLocation from '../../shared/hooks/useLocation';
 import validationSchema from './validationSchema';
@@ -19,20 +20,37 @@ import styles from './styles';
 export default function ListingEditScreen() {
     const { location } = useLocation();
 
+    const [visible, setVisible] = useState(false);
+    const [progress, setProgress] = useState(0);
+
     const handleSubmit = async (listing: Listing) => {
-        const result = await listingsApi.createListing({
-            ...listing,
-            location
-        });
+        setProgress(0);
+        setVisible(true);
+        const result = await listingsApi.createListing(
+            {
+                ...listing,
+                location
+            },
+            progressEvent => setProgress(progressEvent)
+        );
+
         if (!result.ok) {
+            setVisible(false);
             alert('Cound not save the listing.');
-            return;
         }
-        alert('Success');
+    };
+
+    const handleAnimationDone = (isCancelled: boolean) => {
+        if (!isCancelled) setVisible(false);
     };
 
     return (
         <Screen style={styles.container}>
+            <UploadScreen
+                onDone={handleAnimationDone}
+                progress={progress}
+                visible={visible}
+            />
             <AppForm
                 initialValues={initialValues}
                 onSubmit={handleSubmit}

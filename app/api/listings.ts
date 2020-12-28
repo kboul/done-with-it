@@ -1,11 +1,21 @@
-import { Listing } from '../screens/ListingEditScreen/models';
 import client from './client';
+import { Listing } from '../screens/ListingEditScreen/models';
 
 const endpoint = '/listings';
 
 const getListings = () => client.get(endpoint);
 
-const createListing = (listing: Listing) => {
+interface UploadProgress {
+    isTrusted: boolean;
+    lengthComputabe: boolean;
+    loaded: number;
+    total: number;
+}
+
+const createListing = (
+    listing: Listing,
+    onUploadProgress: (progress: number) => void
+) => {
     const {
         category,
         description,
@@ -29,7 +39,10 @@ const createListing = (listing: Listing) => {
     data.append('description', description);
     if (location) data.append('location', JSON.stringify(location));
 
-    return client.post(endpoint, data);
+    return client.post(endpoint, data, {
+        onUploadProgress: (progress: UploadProgress) =>
+            onUploadProgress(progress.loaded / progress.total)
+    });
 };
 
 export default {
