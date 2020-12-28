@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { FlatList } from 'react-native';
 
 import ActivityIndicator from '../../shared/ActivityIndicator';
@@ -6,35 +6,14 @@ import Card from '../../shared/Card';
 import ErrorMessage from './ErrorMessage';
 import Screen from '../../shared/Screen';
 import listingsApi from '../../api/listings';
+import useApi from '../../shared/hooks/useApi';
 import { Listing, ListingsScreenProps } from './model';
-import { initialState } from './constants';
 import styles from './styles';
 
 export default function ListingsScreen({ navigation }: ListingsScreenProps) {
-    const [state, setState] = useState(initialState);
-
-    const setValue = (field: string, value: any) => {
-        const tempState = { ...state };
-        tempState[field] = value;
-        setState(tempState);
-    };
-
-    const loadListings = async () => {
-        setValue('loading', true);
-        const response = await listingsApi.getListings();
-        setValue('loading', false);
-
-        if (!response.ok) {
-            setValue('error', true);
-            return;
-        }
-
-        setState(prevState => ({
-            ...prevState,
-            error: false,
-            listings: response.data as Listing[]
-        }));
-    };
+    const { data: listings, error, loading, request: loadListings } = useApi(
+        listingsApi.getListings
+    );
 
     useEffect(() => {
         loadListings();
@@ -42,8 +21,6 @@ export default function ListingsScreen({ navigation }: ListingsScreenProps) {
 
     const handleCardPress = (item: Listing) =>
         navigation.navigate('ListingDetails', item);
-
-    const { error, listings, loading } = state;
 
     return (
         <Screen style={styles.screen}>

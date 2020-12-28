@@ -23,10 +23,4 @@ interface ListingsScreenProps {
     navigation: ListingsScreenNavigationProp;
 }
 
-interface State {
-    error: boolean;
-    listings: Listing[];
-    loading: boolean;
-}
-
-export type { Listing, ListingsScreenProps, State };
+export type { Listing, ListingsScreenProps };
