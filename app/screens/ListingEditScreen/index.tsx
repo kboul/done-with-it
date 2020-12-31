@@ -11,7 +11,7 @@ import CategoryPickerItem from '../../shared/CategoryPickerItem';
 import Screen from '../../shared/Screen';
 import UploadScreen from '../UploadScreen';
 import listingsApi from '../../api/listings';
-import useLocation from '../../shared/hooks/useLocation';
+import useLocation from '../../hooks/useLocation';
 import validationSchema from './validationSchema';
 import { Listing } from './models';
 import { categories, initialValues } from './constants';

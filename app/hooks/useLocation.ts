@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import * as ExpoLocation from 'expo-location';
-import { Location } from '../../screens/ListingEditScreen/models';
+import { Location } from '../screens/ListingEditScreen/models';
 
 interface LocationOutput {
     location: Location;

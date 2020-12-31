@@ -6,7 +6,7 @@ import Card from '../../shared/Card';
 import ErrorMessage from './ErrorMessage';
 import Screen from '../../shared/Screen';
 import listingsApi from '../../api/listings';
-import useApi from '../../shared/hooks/useApi';
+import useApi from '../../hooks/useApi';
 import { Listing, ListingsScreenProps } from './model';
 import styles from './styles';
 

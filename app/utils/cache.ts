@@ -9,7 +9,7 @@ interface Item {
     value: any;
 }
 
-const store = async (key: string, value: any) => {
+const store = async (key: string, value: any): Promise<void> => {
     try {
         const item: Item = { value, timestamp: Date.now() };
         await AsyncStorage.setItem(`${prefix}${key}`, JSON.stringify(item));
@@ -18,14 +18,14 @@ const store = async (key: string, value: any) => {
     }
 };
 
-const isExpired = (item: Item) => {
+const isExpired = (item: Item): boolean => {
     const now = moment(Date.now());
     const storedTime = moment(item.timestamp);
     return now.diff(storedTime, 'minutes') > expiryInMinutes;
 };
 
 // eslint-disable-next-line consistent-return
-const get = async (key: string) => {
+const get = async (key: string): Promise<any> => {
     try {
         const value = await AsyncStorage.getItem(`${prefix}${key}`);
         const item: Item = value ? JSON.parse(value) : null;
