@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View } from 'react-native';
+import { Image } from 'react-native-expo-image-cache';
 
 import AppText from '../../shared/AppText';
 import { ListItem } from '../../shared/lists';
@@ -13,7 +14,12 @@ export default function ListingDetailsScreen({
     const { images, price, title } = listing;
     return (
         <View>
-            <Image source={{ uri: images[0].url }} style={styles.image} />
+            <Image
+                preview={{ uri: images[0].thumbnailUrl }}
+                style={styles.image}
+                tint="light"
+                uri={images[0].url}
+            />
             <View style={styles.detailsContainer}>
                 <AppText style={styles.title}>{title}</AppText>
                 <AppText style={styles.subtitle}>{`$${price}`}</AppText>

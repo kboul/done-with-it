@@ -34,6 +34,7 @@ export default function ListingsScreen({ navigation }: ListingsScreenProps) {
                         imageUrl={item.images[0].url}
                         onPress={() => handleCardPress(item)}
                         subtitle={`$ ${item.price}`}
+                        thumbnailUrl={item.images[0].thumbnailUrl}
                         title={item.title}
                     />
                 )}

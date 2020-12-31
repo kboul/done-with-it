@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Image, TouchableWithoutFeedback } from 'react-native';
+import { View, TouchableWithoutFeedback } from 'react-native';
+import { Image } from 'react-native-expo-image-cache';
 
 import AppText from '../AppText';
 import CardProps from './model';
@@ -9,12 +10,18 @@ export default function Card({
     imageUrl,
     onPress,
     subtitle,
+    thumbnailUrl,
     title
 }: CardProps) {
     return (
         <TouchableWithoutFeedback onPress={onPress}>
             <View style={styles.container}>
-                <Image source={{ uri: imageUrl }} style={styles.image} />
+                <Image
+                    preview={{ uri: thumbnailUrl }}
+                    style={styles.image}
+                    tint="light"
+                    uri={imageUrl}
+                />
                 <View style={styles.detailsContainer}>
                     <AppText style={styles.title}>{title}</AppText>
                     <AppText style={styles.subtitle}>{subtitle}</AppText>
