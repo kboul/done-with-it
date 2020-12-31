@@ -14,7 +14,7 @@ export default function Welcome({ navigation }: WelcomeProps) {
             style={styles.background}>
             <View style={styles.logoContainer}>
                 <Image
-                    source={require('../../assets/logo-red.png')}
+                    source={require('../assets/logo-red.png')}
                     style={styles.logo}
                 />
                 <Text style={styles.text}>Sell what you don&apos;t need</Text>
