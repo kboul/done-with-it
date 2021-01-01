@@ -7,6 +7,7 @@ const colors = {
     green: '#26de81',
     grey: '#7b8ca4',
     lightGray: '#f8f4f4',
+    lightYellow: '#ffe66d',
     mediumGray: '#6e6969',
     orange: '#fd9644',
     primary: '#fc5c65',

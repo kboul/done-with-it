@@ -8,10 +8,14 @@ import { useAuthContext } from '../../auth/context';
 import { AccountScreenProps } from './model';
 import menuItems from './constants';
 import styles from './styles';
+import colors from '../../config/colors';
 
 export default function AccountScreen({ navigation }: AccountScreenProps) {
-    const { user } = useAuthContext();
+    const { user, setUser } = useAuthContext();
+
     const handleListItemPress = item => navigation.navigate(item.targetScreen);
+
+    const handleUserLogout = () => setUser(null);
 
     return (
         <Screen style={styles.screen}>
@@ -43,8 +47,11 @@ export default function AccountScreen({ navigation }: AccountScreenProps) {
                 />
             </View>
             <ListItem
+                onPress={handleUserLogout}
                 title="Logout"
-                IconComponent={<Icon backgroundColor="#ffe66d" name="logout" />}
+                IconComponent={
+                    <Icon backgroundColor={colors.lightYellow} name="logout" />
+                }
             />
         </Screen>
     );

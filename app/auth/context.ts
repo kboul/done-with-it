@@ -9,7 +9,7 @@ interface User {
 
 interface ContextType {
     user: User;
-    setUser: (user: Object) => void;
+    setUser: (user: Object | null) => void;
 }
 
 const AuthContext = createContext<ContextType | any>({
