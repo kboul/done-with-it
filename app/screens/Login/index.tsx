@@ -11,11 +11,13 @@ import {
 } from '../../shared/forms';
 import Screen from '../../shared/Screen';
 import validationSchema from './validationSchema';
-import UserCredentials from './model';
 import auth from './api';
+import { useAuthContext } from '../../auth/context';
+import UserCredentials from './model';
 import styles from './styles';
 
 export default function Login() {
+    const authContext = useAuthContext();
     const [loginFailed, setLoginFailed] = useState(false);
 
     const handleSubmit = async (values: UserCredentials) => {
@@ -28,7 +30,7 @@ export default function Login() {
         setLoginFailed(false);
         const token: string = result.data;
         const user = jwtDecode<JwtPayload>(token);
-        console.log(user);
+        authContext.setUser(user);
     };
 
     return (
