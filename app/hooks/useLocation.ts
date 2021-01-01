@@ -3,15 +3,12 @@ import * as ExpoLocation from 'expo-location';
 import { Location } from '../screens/ListingEditScreen/models';
 
 interface LocationOutput {
-    location: Location;
+    location: Location | undefined;
     error: Object;
 }
 
 export default function useLocation(): LocationOutput {
-    const [location, setLocation] = useState<Location>({
-        latitude: null,
-        longitude: null
-    });
+    const [location, setLocation] = useState<Location>();
     const [error, setError] = useState({});
 
     const getLocation = async () => {

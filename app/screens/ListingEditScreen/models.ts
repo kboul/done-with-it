@@ -7,14 +7,14 @@ interface Listing {
     };
     description: string;
     imageUris: string[];
-    location: Location;
+    location: Location | undefined;
     price: string;
     title: string;
 }
 
 interface Location {
-    latitude: number | null;
-    longitude: number | null;
+    latitude: number;
+    longitude: number;
 }
 
 interface Category {
