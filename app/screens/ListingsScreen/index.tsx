@@ -23,22 +23,24 @@ export default function ListingsScreen({ navigation }: ListingsScreenProps) {
         navigation.navigate('ListingDetails', item);
 
     return (
-        <Screen style={styles.screen}>
-            {error && <ErrorMessage onPress={loadListings} />}
+        <>
             <ActivityIndicator visible={loading} />
-            <FlatList
-                data={listings}
-                keyExtractor={listing => listing.id.toString()}
-                renderItem={({ item }) => (
-                    <Card
-                        imageUrl={item.images[0].url}
-                        onPress={() => handleCardPress(item)}
-                        subtitle={`$ ${item.price}`}
-                        thumbnailUrl={item.images[0].thumbnailUrl}
-                        title={item.title}
-                    />
-                )}
-            />
-        </Screen>
+            <Screen style={styles.screen}>
+                {error && <ErrorMessage onPress={loadListings} />}
+                <FlatList
+                    data={listings}
+                    keyExtractor={listing => listing.id.toString()}
+                    renderItem={({ item }) => (
+                        <Card
+                            imageUrl={item.images[0].url}
+                            onPress={() => handleCardPress(item)}
+                            subtitle={`$ ${item.price}`}
+                            thumbnailUrl={item.images[0].thumbnailUrl}
+                            title={item.title}
+                        />
+                    )}
+                />
+            </Screen>
+        </>
     );
 }
