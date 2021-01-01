@@ -1,11 +1,19 @@
 import { create } from 'apisauce';
 
 import cache from '../utils/cache';
+import authStorage from '../auth/storage';
 
 const client = create({
     // for android virtual device to be able to see the api
     // ip address
     baseURL: 'http://192.168.1.5:9000/api'
+});
+
+client.addAsyncRequestTransform(async request => {
+    const token = await authStorage.getToken();
+    if (!token) return;
+
+    request.headers['x-auth-token'] = token;
 });
 
 const { get } = client;
