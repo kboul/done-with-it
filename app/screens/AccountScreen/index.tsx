@@ -5,17 +5,21 @@ import Icon from '../../shared/Icon';
 import { ListItem, ListItemSeparator } from '../../shared/lists';
 import Screen from '../../shared/Screen';
 import { useAuthContext } from '../../auth/context';
+import authStorage from '../../auth/storage';
 import { AccountScreenProps } from './model';
 import menuItems from './constants';
-import styles from './styles';
 import colors from '../../config/colors';
+import styles from './styles';
 
 export default function AccountScreen({ navigation }: AccountScreenProps) {
     const { user, setUser } = useAuthContext();
 
     const handleListItemPress = item => navigation.navigate(item.targetScreen);
 
-    const handleUserLogout = () => setUser(null);
+    const handleLogout = () => {
+        setUser(null);
+        authStorage.removeToken();
+    };
 
     return (
         <Screen style={styles.screen}>
@@ -47,7 +51,7 @@ export default function AccountScreen({ navigation }: AccountScreenProps) {
                 />
             </View>
             <ListItem
-                onPress={handleUserLogout}
+                onPress={handleLogout}
                 title="Logout"
                 IconComponent={
                     <Icon backgroundColor={colors.lightYellow} name="logout" />

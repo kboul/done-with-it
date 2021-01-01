@@ -6,7 +6,7 @@ import validationSchema from './validationSchema';
 import Values from './model';
 import styles from './styles';
 
-export default function Register() {
+export default function RegisterScreen() {
     return (
         <Screen style={styles.container}>
             <AppForm

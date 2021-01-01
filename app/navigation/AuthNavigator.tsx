@@ -1,8 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Login from '../screens/Login';
-import Register from '../screens/Register';
+import LoginScreen from '../screens/LoginScreen';
+import RegisterScreen from '../screens/RegisterScreen';
 import Welcome from '../screens/Welcome';
 
 export default function AuthNavigator() {
@@ -14,8 +14,8 @@ export default function AuthNavigator() {
                 name="Welcome"
                 options={{ headerShown: false }}
             />
-            <Stack.Screen component={Login} name="Login" />
-            <Stack.Screen component={Register} name="Register" />
+            <Stack.Screen component={LoginScreen} name="Login" />
+            <Stack.Screen component={RegisterScreen} name="Register" />
         </Stack.Navigator>
     );
 }

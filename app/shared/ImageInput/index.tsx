@@ -29,7 +29,7 @@ export default function ImageInput({
             });
             if (!result.cancelled) onImageChange(result.uri);
         } catch (error) {
-            console.log('Error reading the image');
+            throw new Error('Error reading the image');
         }
     };
 

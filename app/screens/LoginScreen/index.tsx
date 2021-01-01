@@ -13,10 +13,11 @@ import Screen from '../../shared/Screen';
 import validationSchema from './validationSchema';
 import auth from './api';
 import { useAuthContext } from '../../auth/context';
+import authStorage from '../../auth/storage';
 import UserCredentials from './model';
 import styles from './styles';
 
-export default function Login() {
+export default function LoginScreen() {
     const authContext = useAuthContext();
     const [loginFailed, setLoginFailed] = useState(false);
 
@@ -31,6 +32,7 @@ export default function Login() {
         const token: string = result.data;
         const user = jwtDecode<JwtPayload>(token);
         authContext.setUser(user);
+        authStorage.storeToken(token);
     };
 
     return (

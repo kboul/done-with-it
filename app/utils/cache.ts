@@ -14,7 +14,7 @@ const store = async (key: string, value: any): Promise<void> => {
         const item: Item = { value, timestamp: Date.now() };
         await AsyncStorage.setItem(`${prefix}${key}`, JSON.stringify(item));
     } catch (error) {
-        console.log(error);
+        throw new Error(error);
     }
 };
 
@@ -37,7 +37,7 @@ const get = async (key: string): Promise<any> => {
 
         return item.value;
     } catch (error) {
-        console.log(error);
+        throw new Error(error);
     }
 };
 
