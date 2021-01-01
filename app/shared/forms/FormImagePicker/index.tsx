@@ -29,7 +29,7 @@ export default function FormImagePicker({ name }: FormImagePickerProps) {
                 onImageAdd={handleImageAdd}
                 onImageRemove={handleImageRemove}
             />
-            <ErrorMessage error={errors[name]} touched={touched[name]} />
+            <ErrorMessage error={errors[name]} visible={touched[name]} />
         </>
     );
 }

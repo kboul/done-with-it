@@ -25,7 +25,7 @@ export default function FormPicker({
                 placeholder={placeholder}
                 selectedItem={values[name]}
             />
-            <ErrorMessage error={errors[name]} touched={touched[name]} />
+            <ErrorMessage error={errors[name]} visible={touched[name]} />
         </>
     );
 }
