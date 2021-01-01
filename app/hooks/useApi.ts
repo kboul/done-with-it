@@ -4,7 +4,7 @@ interface ApiReturnType {
     data: any[];
     error: boolean;
     loading: boolean;
-    request: () => void;
+    request: (...args: any[]) => Promise<any>;
 }
 
 export default function useApi(apiFunc): ApiReturnType {
@@ -12,18 +12,14 @@ export default function useApi(apiFunc): ApiReturnType {
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    const request = async () => {
+    const request = async (...args: any[]) => {
         setLoading(true);
-        const response = await apiFunc();
+        const response = await apiFunc(...args);
         setLoading(false);
 
-        if (!response.ok) {
-            setError(true);
-            return;
-        }
-
-        setError(false);
+        setError(!response.ok);
         setData(response.data);
+        return response;
     };
 
     return { data, error, loading, request };

@@ -8,20 +8,24 @@ import {
     FormField,
     SubmitButton
 } from '../../shared/forms';
+import ActivityIndicator from '../../shared/ActivityIndicator';
 import { useAuthContext } from '../../auth/context';
 import authApi from '../LoginScreen/api';
 import usersApi from './api';
+import useApi from '../../hooks/useApi';
 import validationSchema from './validationSchema';
 import UserInfo from './model';
 import styles from './styles';
 
 export default function RegisterScreen() {
+    const loginApi = useApi(authApi.login);
+    const registerApi = useApi(usersApi.register);
     const { login } = useAuthContext();
 
     const [error, setError] = useState('');
 
     const handleSubmit = async (userInfo: UserInfo) => {
-        const result: ApiResponse<any> = await usersApi.register(userInfo);
+        const result: ApiResponse<any> = await registerApi.request(userInfo);
 
         if (!result.ok) {
             if (result.data) setError(result.data.error);
@@ -32,15 +36,18 @@ export default function RegisterScreen() {
             return;
         }
 
-        const loginResult: ApiResponse<any> = await authApi.login(
+        const { data }: ApiResponse<any> = await loginApi.request(
             userInfo.email,
             userInfo.password
         );
-        login(loginResult.data);
+        login(data);
     };
 
     return (
         <Screen style={styles.container}>
+            <ActivityIndicator
+                visible={registerApi.loading || loginApi.loading}
+            />
             <AppForm
                 initialValues={{ name: '', email: '', password: '' }}
                 onSubmit={handleSubmit}
