@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Image } from 'react-native';
 import { ApiResponse } from 'apisauce';
-import jwtDecode, { JwtPayload } from 'jwt-decode';
 
 import {
     AppForm,
@@ -13,26 +12,21 @@ import Screen from '../../shared/Screen';
 import validationSchema from './validationSchema';
 import auth from './api';
 import { useAuthContext } from '../../auth/context';
-import authStorage from '../../auth/storage';
 import UserCredentials from './model';
 import styles from './styles';
 
 export default function LoginScreen() {
-    const authContext = useAuthContext();
+    const { login } = useAuthContext();
     const [loginFailed, setLoginFailed] = useState(false);
 
-    const handleSubmit = async (values: UserCredentials) => {
-        const { email, password } = values;
+    const handleSubmit = async ({ email, password }: UserCredentials) => {
         const result: ApiResponse<any> = await auth.login(email, password);
         if (!result.ok) {
             setLoginFailed(true);
             return;
         }
         setLoginFailed(false);
-        const token: string = result.data;
-        const user = jwtDecode<JwtPayload>(token);
-        authContext.setUser(user);
-        authStorage.storeToken(token);
+        login(result.data);
     };
 
     return (
