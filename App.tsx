@@ -21,12 +21,18 @@ export default function App() {
         if (currentUser) setUser(currentUser);
     };
 
+    const handleLoadingError = () => {
+        throw new Error('App loading error');
+    };
+
+    const handleLoadingFinish = () => setIsReady(true);
+
     if (!isReady)
         return (
             <AppLoading
                 startAsync={restoreUser}
-                onError={console.warn}
-                onFinish={() => setIsReady(true)}
+                onError={handleLoadingError}
+                onFinish={handleLoadingFinish}
             />
         );
 

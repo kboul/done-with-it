@@ -9,11 +9,14 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         overflow: 'hidden' // force iamge to have round corners
     },
+    contactContainer: {
+        padding: 10
+    },
     detailsContainer: {
         padding: 10
     },
     listItemContainer: {
-        marginTop: 40
+        marginTop: 10
     },
     image: {
         width: '100%',
