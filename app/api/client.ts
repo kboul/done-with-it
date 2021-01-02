@@ -2,11 +2,11 @@ import { create } from 'apisauce';
 
 import cache from '../utils/cache';
 import authStorage from '../auth/storage';
+import settings from '../config/settings';
 
 const client = create({
-    // for android virtual device to be able to see the api
-    // ip address
-    baseURL: 'http://192.168.1.5:9000/api'
+    // for android virtual device to be able to see the api - ip address
+    baseURL: settings.apiUrl
 });
 
 client.addAsyncRequestTransform(async request => {
