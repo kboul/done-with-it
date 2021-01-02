@@ -3,7 +3,7 @@ import { ApiResponse } from 'apisauce';
 
 import Screen from '../../shared/Screen';
 import {
-    AppForm,
+    Form,
     ErrorMessage,
     FormField,
     SubmitButton
@@ -49,7 +49,7 @@ export default function RegisterScreen() {
                 visible={registerApi.loading || loginApi.loading}
             />
             <Screen style={styles.container}>
-                <AppForm
+                <Form
                     initialValues={{ name: '', email: '', password: '' }}
                     onSubmit={handleSubmit}
                     validationSchema={validationSchema}>
@@ -82,7 +82,7 @@ export default function RegisterScreen() {
                         textContentType="password"
                     />
                     <SubmitButton title="Register" />
-                </AppForm>
+                </Form>
             </Screen>
         </>
     );

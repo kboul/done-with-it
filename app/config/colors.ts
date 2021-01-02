@@ -1,4 +1,4 @@
-const colors = {
+export default {
     black: '#000',
     brightBlue: '#45aaf2',
     cyan: '#2bcbba',
@@ -18,5 +18,3 @@ const colors = {
     white: '#fff',
     yellow: '#fed330'
 };
-
-export default colors;

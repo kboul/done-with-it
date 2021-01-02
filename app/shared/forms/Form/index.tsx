@@ -1,14 +1,14 @@
 import React from 'react';
 import { Formik } from 'formik';
 
-import AppFormProps from './model';
+import FormProps from './model';
 
-export default function AppForm({
+export default function Form({
     children,
     initialValues,
     onSubmit,
     validationSchema
-}: AppFormProps) {
+}: FormProps) {
     return (
         <Formik
             initialValues={initialValues}

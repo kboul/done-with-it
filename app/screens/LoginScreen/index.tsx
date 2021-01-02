@@ -3,7 +3,7 @@ import { Image } from 'react-native';
 import { ApiResponse } from 'apisauce';
 
 import {
-    AppForm,
+    Form,
     ErrorMessage,
     FormField,
     SubmitButton
@@ -35,7 +35,7 @@ export default function LoginScreen() {
                 source={require('../assets/logo-red.png')}
                 style={styles.logo}
             />
-            <AppForm
+            <Form
                 initialValues={{ email: '', password: '' }}
                 onSubmit={handleSubmit}
                 validationSchema={validationSchema}>
@@ -62,7 +62,7 @@ export default function LoginScreen() {
                     textContentType="password"
                 />
                 <SubmitButton title="Login" />
-            </AppForm>
+            </Form>
         </Screen>
     );
 }

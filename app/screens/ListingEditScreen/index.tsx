@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import {
-    AppForm,
+    Form,
     FormField,
     FormImagePicker,
     FormPicker,
@@ -53,7 +53,7 @@ export default function ListingEditScreen() {
                 progress={progress}
                 visible={visible}
             />
-            <AppForm
+            <Form
                 initialValues={initialValues}
                 onSubmit={handleSubmit}
                 validationSchema={validationSchema}>
@@ -80,7 +80,7 @@ export default function ListingEditScreen() {
                     placeholder="Description"
                 />
                 <SubmitButton title="Post" />
-            </AppForm>
+            </Form>
         </Screen>
     );
 }
