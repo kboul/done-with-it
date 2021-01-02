@@ -10,10 +10,13 @@ const styles = StyleSheet.create({
         overflow: 'hidden' // force iamge to have round corners
     },
     contactContainer: {
-        padding: 10
+        padding: 10,
+        paddingTop: 0
     },
     detailsContainer: {
-        padding: 10
+        padding: 10,
+        paddingBottom: 0,
+        paddingTop: 0
     },
     listItemContainer: {
         marginTop: 10

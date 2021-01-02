@@ -1,9 +1,5 @@
-import client from './client';
-import { Listing } from '../screens/ListingEditScreen/models';
-
-const endpoint = '/listings';
-
-const getListings = () => client.get(endpoint);
+import client from '../../api/client';
+import { Listing } from './models';
 
 interface UploadProgress {
     isTrusted: boolean;
@@ -39,13 +35,10 @@ const createListing = (
     data.append('description', description);
     if (location) data.append('location', JSON.stringify(location));
 
-    return client.post(endpoint, data, {
+    return client.post('/listings', data, {
         onUploadProgress: (progress: UploadProgress) =>
             onUploadProgress(progress.loaded / progress.total)
     });
 };
 
-export default {
-    getListings,
-    createListing
-};
+export default { createListing };

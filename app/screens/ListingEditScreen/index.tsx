@@ -10,7 +10,7 @@ import {
 import CategoryPickerItem from '../../shared/CategoryPickerItem';
 import Screen from '../../shared/Screen';
 import UploadScreen from '../UploadScreen';
-import listingsApi from '../../api/listings';
+import listingsApi from './api';
 import useLocation from '../../hooks/useLocation';
 import validationSchema from './validationSchema';
 import { Listing } from './models';
