@@ -8,6 +8,7 @@ import { AuthContext } from './app/auth/context';
 import AuthNavigator from './app/navigation/AuthNavigator';
 import OfflineNotice from './app/shared/OfflineNotice';
 import authStorage from './app/auth/storage';
+import { navigationRef } from './app/navigation/routeNavigation';
 import navigationTheme from './app/navigation/navigationTheme';
 import colors from './app/config/colors';
 
@@ -33,7 +34,9 @@ export default function App() {
         <View style={styles.container}>
             <AuthContext.Provider value={{ user, setUser }}>
                 <OfflineNotice />
-                <NavigationContainer theme={navigationTheme}>
+                <NavigationContainer
+                    theme={navigationTheme}
+                    ref={navigationRef}>
                     {user ? <AppNavigator /> : <AuthNavigator />}
                 </NavigationContainer>
             </AuthContext.Provider>

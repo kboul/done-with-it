@@ -1,15 +1,13 @@
-import React, { useEffect } from 'react';
-import { Platform } from 'react-native';
+import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Notifications from 'expo-notifications';
-import * as Permissions from 'expo-permissions';
 
 import AccountNavigator from './AccountNavigator';
 import FeedNavigator from './FeedNavigator';
 import ListingEditScreen from '../screens/ListingEditScreen';
 import NewListingButton from './NewListingButton';
-import expoPushTokensApi from '../api/expoPushToken';
+import useNotifications from '../hooks/useNotifications';
 
 interface TabBarIconProps {
     color: string;
@@ -27,36 +25,7 @@ Notifications.setNotificationHandler({
 });
 
 export default function AppNavigator() {
-    useEffect(() => {
-        registerForPushNotifications();
-
-        Notifications.addNotificationReceivedListener(notification =>
-            console.log(notification)
-        );
-    }, []);
-
-    const registerForPushNotifications = async () => {
-        try {
-            const permission = await Permissions.askAsync(
-                Permissions.NOTIFICATIONS
-            );
-            if (!permission.granted) return;
-
-            const token = (await Notifications.getExpoPushTokenAsync()).data;
-            expoPushTokensApi.register(token);
-        } catch (error) {
-            throw new Error('Error getting a push token');
-        }
-
-        if (Platform.OS === 'android') {
-            Notifications.setNotificationChannelAsync('default', {
-                name: 'default',
-                importance: Notifications.AndroidImportance.MAX,
-                vibrationPattern: [0, 250, 250, 250],
-                lightColor: '#FF231F7C'
-            });
-        }
-    };
+    useNotifications();
 
     return (
         <Tab.Navigator>
