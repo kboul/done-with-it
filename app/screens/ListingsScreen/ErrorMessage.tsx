@@ -1,7 +1,7 @@
 import React from 'react';
 
-import AppButton from '../../shared/AppButton';
-import AppText from '../../shared/AppText';
+import AppButton from '../../components/AppButton';
+import AppText from '../../components/AppText';
 
 interface ErrorMessageProps {
     onPress: () => void;

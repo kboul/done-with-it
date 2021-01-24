@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, FlatList } from 'react-native';
 
-import Icon from '../../shared/Icon';
-import { ListItem, ListItemSeparator } from '../../shared/lists';
-import Screen from '../../shared/Screen';
+import Icon from '../../components/Icon';
+import { ListItem, ListItemSeparator } from '../../components/lists';
+import Screen from '../../components/Screen';
 import { useAuthContext } from '../../auth/context';
 import { AccountScreenProps } from './model';
 import menuItems from './constants';

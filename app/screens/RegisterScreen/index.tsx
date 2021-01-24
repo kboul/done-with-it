@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { ApiResponse } from 'apisauce';
 
-import Screen from '../../shared/Screen';
+import Screen from '../../components/Screen';
 import {
     Form,
     ErrorMessage,
     FormField,
     SubmitButton
-} from '../../shared/forms';
-import ActivityIndicator from '../../shared/ActivityIndicator';
+} from '../../components/forms';
+import ActivityIndicator from '../../components/ActivityIndicator';
 import { useAuthContext } from '../../auth/context';
 import authApi from '../LoginScreen/api';
 import usersApi from './api';

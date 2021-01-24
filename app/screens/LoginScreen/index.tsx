@@ -7,8 +7,8 @@ import {
     ErrorMessage,
     FormField,
     SubmitButton
-} from '../../shared/forms';
-import Screen from '../../shared/Screen';
+} from '../../components/forms';
+import Screen from '../../components/Screen';
 import validationSchema from './validationSchema';
 import auth from './api';
 import { useAuthContext } from '../../auth/context';

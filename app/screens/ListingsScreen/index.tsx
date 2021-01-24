@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { FlatList } from 'react-native';
 
-import ActivityIndicator from '../../shared/ActivityIndicator';
-import Card from '../../shared/Card';
+import ActivityIndicator from '../../components/ActivityIndicator';
+import Card from '../../components/Card';
 import ErrorMessage from './ErrorMessage';
-import Screen from '../../shared/Screen';
+import Screen from '../../components/Screen';
 import listingsApi from './api';
 import useApi from '../../hooks/useApi';
 import { Listing, ListingsScreenProps } from './model';

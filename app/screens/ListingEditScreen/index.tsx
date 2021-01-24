@@ -6,9 +6,9 @@ import {
     FormImagePicker,
     FormPicker,
     SubmitButton
-} from '../../shared/forms';
-import CategoryPickerItem from '../../shared/CategoryPickerItem';
-import Screen from '../../shared/Screen';
+} from '../../components/forms';
+import CategoryPickerItem from '../../components/CategoryPickerItem';
+import Screen from '../../components/Screen';
 import UploadScreen from '../UploadScreen';
 import listingsApi from './api';
 import useLocation from '../../hooks/useLocation';

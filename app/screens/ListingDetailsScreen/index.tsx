@@ -2,8 +2,8 @@ import React from 'react';
 import { KeyboardAvoidingView, Platform, View } from 'react-native';
 import { Image } from 'react-native-expo-image-cache';
 
-import AppText from '../../shared/AppText';
-import { ListItem } from '../../shared/lists';
+import AppText from '../../components/AppText';
+import { ListItem } from '../../components/lists';
 import ContactSellerForm from './ContactSellerForm';
 import ListingDetailsScreenProps from './model';
 import styles from './styles';

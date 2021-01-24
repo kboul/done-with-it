@@ -1,7 +1,7 @@
 import React from 'react';
 import { ImageBackground, View, Image, Text } from 'react-native';
 
-import AppButton from '../../shared/AppButton';
+import AppButton from '../../components/AppButton';
 import WelcomeProps from './model';
 import colors from '../../config/colors';
 import styles from './styles';

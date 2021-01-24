@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { FlatList } from 'react-native';
 
-import Screen from '../../shared/Screen';
+import Screen from '../../components/Screen';
 import {
     ListItem,
     ListItemDeleteAction,
     ListItemSeparator
-} from '../../shared/lists';
+} from '../../components/lists';
 import Message from './model';
 import initialMessages from './constants';
 

@@ -6,7 +6,7 @@ import AppLoading from 'expo-app-loading';
 import AppNavigator from './app/navigation/AppNavigator';
 import { AuthContext } from './app/auth/context';
 import AuthNavigator from './app/navigation/AuthNavigator';
-import OfflineNotice from './app/shared/OfflineNotice';
+import OfflineNotice from './app/components/OfflineNotice';
 import authStorage from './app/auth/storage';
 import { navigationRef } from './app/navigation/routeNavigation';
 import navigationTheme from './app/navigation/navigationTheme';

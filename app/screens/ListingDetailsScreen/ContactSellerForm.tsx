@@ -3,7 +3,7 @@ import { Alert, View } from 'react-native';
 import * as Yup from 'yup';
 import * as Notifications from 'expo-notifications';
 
-import { Form, FormField, SubmitButton } from '../../shared/forms';
+import { Form, FormField, SubmitButton } from '../../components/forms';
 import messagesApi from './api';
 import { Listing } from '../ListingsScreen/model';
 
