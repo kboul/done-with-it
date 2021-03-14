@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         backgroundColor: colors.white,
         marginBottom: 20,
-        overflow: 'hidden' // force iamge to have round corners
+        overflow: 'hidden' // force image to have round corners
     },
     detailsContainer: {
         padding: 10

@@ -1,6 +1,4 @@
-import { State } from './model';
-
-const initialState: State = {
+const initialState = {
     error: false,
     listings: [],
     loading: false

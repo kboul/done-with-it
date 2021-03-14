@@ -9,13 +9,13 @@ import colors from '../../../config/colors';
 import styles from './styles';
 
 export default function ListItem({
+    IconComponent,
     image,
     onPress,
     renderRightActions,
     showChevrons = false,
     subtitle,
-    title,
-    IconComponent
+    title
 }: ListItemProps) {
     return (
         <Swipeable renderRightActions={renderRightActions}>

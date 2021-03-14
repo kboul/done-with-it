@@ -12,7 +12,7 @@ import initialMessages from './constants';
 
 export default function MessagesScreen() {
     const [messages, setMessages] = useState(initialMessages);
-    const [refreshing, setRefreshing] = useState(false);
+    const [refreshing] = useState(false);
 
     const handleMessageDelete = (message: Message) => {
         // delete the message from messages
@@ -30,6 +30,7 @@ export default function MessagesScreen() {
                 renderItem={({ item }) => (
                     <ListItem
                         image={item.image}
+                        // eslint-disable-next-line
                         onPress={() => console.log('Message selected', item)}
                         renderRightActions={() => (
                             <ListItemDeleteAction

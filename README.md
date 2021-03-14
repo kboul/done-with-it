@@ -32,6 +32,24 @@ npm install
 expo start
 ```
 
+## Local ip address
+
+Make sure your correct local ip address is used both on front & back end.
+
+### Login to expo account
+
+In case you get the following error
+
+```
+[Unhandled promise rejection: Error: Error getting a push token]
+```
+
+make use you have logged in to your expo account via
+
+```
+expo login
+```
+
 ### React-native-debugger
 
 Go to [this github repo](https://github.com/jhen0409/react-native-debugger), then click [release-page](https://github.com/jhen0409/react-native-debugger/releases) and download the latest amd54.deb for ubuntu to get an executable. Install the executable and use this like all other app in your computer. [Source](https://stackoverflow.com/questions/56457399/how-to-manually-start-react-native-debugger-on-linux-ubuntu)

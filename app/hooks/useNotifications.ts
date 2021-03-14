@@ -10,7 +10,7 @@ export default function useNotifications() {
     useEffect(() => {
         registerForPushNotifications();
 
-        Notifications.addNotificationReceivedListener(notification =>
+        Notifications.addNotificationReceivedListener(() =>
             navigate('Account', {})
         );
     }, []);
