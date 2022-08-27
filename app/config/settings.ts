@@ -17,7 +17,7 @@ const settings = {
 const getCurrentSettings = () => {
     // eslint-disable-next-line no-undef
     if (__DEV__) return settings.dev;
-    if (Constants.manifest.releaseChannel === 'staging')
+    if (Constants?.manifest?.releaseChannel === 'staging')
         return settings.staging;
     return settings.prod;
 };
