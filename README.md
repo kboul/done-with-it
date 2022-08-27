@@ -12,7 +12,18 @@ sudo npm i -g expo-cli
 
 Install expo-client on your phone
 
-In case expo has been updated:
+## Upgrade expo-client in case of conflicts
+
+Go to /usr/local/lib/node_modules and
+
+```
+sudo rm -rf expo-client
+sudo rm .expo-cli-dKBr48UN
+```
+
+Install again expo-cli. It make take some time to complete the installation.
+
+## Upgrade expo
 
 ```
 expo update
